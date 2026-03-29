@@ -9,7 +9,7 @@
 The current WordPress + WooCommerce + Elementor site was built to do everything — browse, buy, manage accounts, process payments. But the reality of the business has moved on:
 
 - **Seasonal and collection sales happen on Etsy.** That's where the shop infrastructure, payment processing, reviews (5.0 stars, 341 reviews), and customer trust already live. Duplicating that on the website creates maintenance overhead with little upside.
-- **Exclusive decorations aren't sold online at all.** They're available through stockists — cathedrals, castles, museums. What customers need isn't a "buy" button, it's information about *where* to find them.
+- **Exclusive decorations aren't sold online at all.** They're available through retailers — cathedrals, castles, museums. What customers need isn't a "buy" button, it's information about *where* to find them.
 - **The website's job isn't to be a shop.** It's to be the brand's home — telling the story, showcasing the work, and directing people to the right place to buy.
 
 The new site strips away the e-commerce complexity and refocuses on what the website uniquely does well: **brand storytelling, product discovery, and wayfinding.**
@@ -23,7 +23,7 @@ The new site strips away the e-commerce complexity and refocuses on what the web
 Every page is designed with two distinct visitors in mind:
 
 1. **Gift buyers and decoration collectors** — browsing for seasonal decorations, looking for something charming and handmade. These people need a quick, delightful path to the Etsy shop.
-2. **Venue buyers and trade customers** — gift shop managers at cathedrals, museum retail buyers, wholesale enquirers. These people need to see the exclusive range, find stockist information, and get in touch.
+2. **Venue buyers and trade customers** — gift shop managers at cathedrals, museum retail buyers, wholesale enquirers. These people need to see the exclusive range, find retailer information, and get in touch.
 
 The homepage makes this split explicit with the "Two ways to discover our decorations" section — two clear cards that immediately route each audience to the right place.
 
@@ -184,19 +184,19 @@ No product-level detail is needed on-site because Etsy handles all of that — p
 
 ## Exclusives Page — Content Decisions
 
-**Decision:** Category grid with a longer description explaining that these products are stockist-only.
+**Decision:** Category grid with a longer description explaining that these products are retailer-only.
 
 **Why:** This is the most important piece of expectation-setting on the site. Unlike the collections page (which links to Etsy for purchasing), the exclusives page leads to products that **cannot be bought online.** The description makes this clear upfront: *"These pieces are not sold directly online. Use the catalogue to explore the range and find where to buy each design."*
 
-The italic note — *"Available from participating stockists"* — reinforces this at a glance for visitors who might skim past the paragraph.
+The italic note — *"Available from participating retailers"* — reinforces this at a glance for visitors who might skim past the paragraph.
 
 ---
 
-## Stockists Page — Content Decisions
+## Retailers Page — Content Decisions
 
-**Decision:** Map placeholder + featured stockist cards on a mist-blue background.
+**Decision:** Map placeholder + featured retailer cards on a mist-blue background.
 
-**Why:** The stockists page exists to answer one question: "Where can I find these decorations in person?" The map (once populated) will be the primary tool for this. The featured stockist cards below highlight the most prestigious venues — Canterbury Cathedral, Tower of London, Hampton Court Palace, Edinburgh Castle, Stonehenge, Windsor Castle — which also serves as social proof. If these iconic venues stock Roelofs & Rubens, the quality speaks for itself.
+**Why:** The retailers page exists to answer one question: "Where can I find these decorations in person?" The map (once populated) will be the primary tool for this. The featured retailer cards below highlight the most prestigious venues — Canterbury Cathedral, Tower of London, Hampton Court Palace, Edinburgh Castle, Stonehenge, Windsor Castle — which also serves as social proof. If these iconic venues stock Roelofs & Rubens, the quality speaks for itself.
 
 ---
 
@@ -229,7 +229,7 @@ A subtle gradient line appears beneath every major heading. It's a nod to the fi
 
 ### Card Elevation & Hover Effects
 
-Every interactive card (category, stockist, process step, carousel) shares the same hover behaviour — a gentle upward lift with a deepening shadow. This creates a tactile, physical feel that's appropriate for a brand whose products are tangible, handmade objects meant to be held and hung.
+Every interactive card (category, retailer, process step, carousel) shares the same hover behaviour — a gentle upward lift with a deepening shadow. This creates a tactile, physical feel that's appropriate for a brand whose products are tangible, handmade objects meant to be held and hung.
 
 ---
 
@@ -248,11 +248,11 @@ Every interactive card (category, stockist, process step, carousel) shares the s
 
 1. Lands on **Home** → sees "Venue Exclusives" path card → clicks "Explore Exclusives"
 2. Arrives at **Exclusives** catalogue → browses categories (Cathedrals, Museums, etc.)
-3. Finds relevant products → sees "Available from participating stockists"
-4. Visits **Stockists** page → finds nearest venue on map
+3. Finds relevant products → sees "Available from participating retailers"
+4. Visits **Retailers** page → finds nearest venue on map
 5. *Or:* visits **Wholesale** page → submits enquiry to stock the products
 
-**Key insight:** This visitor needs to understand that exclusives aren't sold online — and needs a clear path to either find existing stockists or become one.
+**Key insight:** This visitor needs to understand that exclusives aren't sold online — and needs a clear path to either find existing retailers or become one.
 
 ### Journey 3: First-Time Visitor Who's Never Heard of R&R
 
@@ -282,10 +282,10 @@ Every interactive card (category, stockist, process step, carousel) shares the s
 | Removed | Reason |
 |---------|--------|
 | On-site product pages for seasonal items | Etsy handles this better — product images, descriptions, pricing, reviews, cart, checkout, and payment processing are all already there |
-| Shopping cart and checkout flow | No longer needed — seasonal sales go through Etsy, exclusives are bought at stockists |
+| Shopping cart and checkout flow | No longer needed — seasonal sales go through Etsy, exclusives are bought at retailers |
 | Customer account / order history | Etsy manages this for seasonal buyers; wholesale accounts are handled separately |
 | WooCommerce product management | Replaced by Etsy for seasonal, Odoo for exclusives catalogue |
-| Multiple separate stockist maps | Consolidated into one page with a single interactive map |
+| Multiple separate retailer maps | Consolidated into one page with a single interactive map |
 | Shipping calculator | Etsy handles shipping for all direct-to-consumer sales |
 
 **What this achieves:** The site goes from 200+ pages (products, cart, checkout, account, etc.) to approximately 10 focused pages. Faster to load, easier to maintain, clearer for visitors.
@@ -297,7 +297,7 @@ Every interactive card (category, stockist, process step, carousel) shares the s
 1. **YouTube video embed** — currently shows an error (Error 153) on some browsers. May need a fallback image or alternative embed approach.
 2. **Google Maps embed** — placeholder in place on About page. Needs the actual business location pin configured.
 3. **Etsy section links** — category cards on the Collections page need the actual Etsy section URLs (format: `etsy.com/uk/shop/roelofsrubens?section_id=XXXXXXX`).
-4. **Stockist map data** — the Stockists page map needs populating with actual venue locations.
+4. **Retailer map data** — the retailers map needs populating with actual venue locations.
 5. **Product photography** — category card images are using placeholders. Need final photography for each category.
 6. **Trade fair dates** — the Wholesale page mentions upcoming trade fairs but doesn't list specific dates yet.
 7. **Legal pages** — privacy policy, cookie policy, terms need migrating from the current site.
