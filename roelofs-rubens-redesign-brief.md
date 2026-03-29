@@ -5,7 +5,7 @@
 Roelofs & Rubens is a Berkshire-based manufacturer of handmade ceramic hanging decorations, founded in 2006 by Dutch designer Piet van den Beuken and her husband Monty Abram. They sell two types of product:
 
 1. **Seasonal Decorations** — Christmas, flowers, animals, hearts, seaside, vegetables, faith, Easter, etc. Sold direct-to-consumer via their website and Etsy shop. ~120 products at £18 each. Free UK shipping.
-2. **Exclusive (In-Store) Decorations** — Bespoke designs for specific venues: cathedrals, castles, museums, chapels, and buildings across the UK and Europe. 100+ unique designs. These are only sold through the venues/stockists themselves, not direct online.
+2. **Exclusive (In-Store) Decorations** — Bespoke designs for specific venues: cathedrals, castles, museums, chapels, and buildings across the UK and Europe. 100+ unique designs. These are only sold through the venues/retailers themselves, not direct online.
 
 They also attend trade fairs (Museums & Heritage Show, Scotland's Trade Fair, Top Drawer, ACE and CCSA conferences) and offer wholesale accounts.
 
@@ -40,7 +40,7 @@ Home
 │   ├── Chapels
 │   ├── Historic Houses
 │   └── Landmarks
-├── Stockists                      → Map of UK/EU stockists
+├── Retailers                      → Map of UK/EU retailers
 ├── About
 │   ├── Our Story (Meet the founders, Delft blue)
 │   ├── Made by Hand (process)
@@ -59,7 +59,7 @@ Home
 ```
 
 ### Navigation (Desktop)
-Home · Collections · Exclusives · Stockists · About · Wholesale
+Home · Collections · Exclusives · Retailers · About · Wholesale
 
 Plus: Logo (left-aligned), Search bar, Hamburger (mobile)
 
@@ -118,7 +118,7 @@ All card types share a unified shadow and hover treatment:
 - **Rest**: `box-shadow: 0 1px 3px rgba(31,61,115,0.06), 0 4px 16px rgba(31,61,115,0.04)`
 - **Hover**: `translateY(-6px)` lift + deeper shadow
 - **Easing**: `cubic-bezier(0.25, 0.46, 0.45, 0.94)`
-- Applied to: category cards, path cards, stockist cards, process step cards, carousel cards
+- Applied to: category cards, path cards, retailer cards, process step cards, carousel cards
 
 #### Buttons
 | Variant | Style |
@@ -136,7 +136,7 @@ All card types share a unified shadow and hover treatment:
 | Category card grid | `.category-grid` + `.category-card` | Collections, Exclusives |
 | Path card | `.path-card` | Home (two-path) |
 | Process step | `.process-step` | About (made by hand) |
-| Stockist card | `.stockist-card` | Stockists |
+| Retailer card | `.stockist-card` | Retailers |
 | Narrative block | `.narrative-block` | Wholesale |
 | Page hero | `.page-hero` | All inner pages |
 | Video embed | `.feature-image--video` | About |
@@ -174,19 +174,19 @@ All card types share a unified shadow and hover treatment:
 
 ### 3. Exclusives (Category Browse)
 
-**Page hero:** Mist-blue with bottom scallop wave. Heading + long description explaining these are stockist-only products. Italic note: "Available from participating stockists."
+**Page hero:** Mist-blue with bottom scallop wave. Heading + long description explaining these are retailer-only products. Italic note: "Available from participating retailers."
 
 **Category catalogue:** White background. 3-column grid of category cards: Cathedrals, Castles, Museums, Chapels, Historic Houses, Landmarks.
 
 ---
 
-### 4. Stockists
+### 4. Retailers
 
 **Page hero:** Mist-blue with bottom scallop wave. Heading + description.
 
 **Map section:** White background. Map placeholder (to be replaced with interactive Google Maps embed).
 
-**Featured stockists:** Mist-blue with scallop waves. 3-column grid of stockist cards: Canterbury Cathedral, Tower of London, Hampton Court Palace, Edinburgh Castle, Stonehenge, Windsor Castle. Each with location and "View on map" CTA.
+**Featured retailers:** Mist-blue with scallop waves. 3-column grid of retailer cards: Canterbury Cathedral, Tower of London, Hampton Court Palace, Edinburgh Castle, Stonehenge, Windsor Castle. Each with location and "View on map" CTA.
 
 ---
 
@@ -240,7 +240,7 @@ All card types share a unified shadow and hover treatment:
 - **eCommerce** — only if they eventually want to sell exclusives online direct, or bring seasonal sales back on-site
 - **CRM** — track wholesale leads and trade fair contacts
 - **Email Marketing** — newsletter campaigns (replaces any current Mailchimp/similar)
-- **Inventory** — if they want to track stock levels across Etsy + stockists
+- **Inventory** — if they want to track stock levels across Etsy + retailers
 - **Invoicing** — wholesale order billing
 - **Events** — manage and promote trade fair appearances
 
@@ -258,8 +258,8 @@ The Collections section doesn't need product data on-site. The pattern is:
 
 No Etsy API integration required — just outbound links.
 
-### Stockist Map Implementation
-- **Google Maps embed** — create a custom Google My Maps with all stockist pins, embed via iframe. Easy to update, free.
+### Retailer Map Implementation
+- **Google Maps embed** — create a custom Google My Maps with all retailer pins, embed via iframe. Easy to update, free.
 - **On product pages (exclusives)** — embed a single-pin Google Map showing where that specific product is sold.
 
 ### SEO & Migration Considerations
@@ -276,7 +276,7 @@ No Etsy API integration required — just outbound links.
 From the current site, the following content needs to be carried over:
 
 1. **Product photography** — all exclusive decoration images (100+ products)
-2. **Stockist data** — venue names, locations, links for the map(s)
+2. **Retailer data** — venue names, locations, links for the map(s)
 3. **About copy** — founding story, bespoke process description
 4. **Wholesale info** — contact details, T&Cs, trade fair dates
 5. **Category imagery** — photos representing each category
@@ -288,7 +288,7 @@ From the current site, the following content needs to be carried over:
 
 The redesigned site should:
 - Load significantly faster than the current WordPress/Elementor site
-- Have a clear path from browsing → Etsy purchase (for collections) or → stockist location (for exclusives)
+- Have a clear path from browsing → Etsy purchase (for collections) or → retailer location (for exclusives)
 - Be easy for the business owners to update via Odoo's drag-and-drop editor
 - Look and feel like a premium artisan brand — not a generic Odoo template
 - Work beautifully on mobile (most craft/gift browsing is mobile)
