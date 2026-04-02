@@ -711,6 +711,7 @@ section.hero {
 .about-exclusive,
 .about-section--mist,
 .featured-exclusives,
+.commission-process,
 .product-stockist,
 .featured-stockists {
   position: relative;
@@ -737,6 +738,7 @@ section.hero {
 .about-exclusive::before,
 .about-section--mist::before,
 .featured-exclusives::before,
+.commission-process::before,
 .product-stockist::before,
 .featured-stockists::before {
   content: "";
@@ -760,6 +762,7 @@ section.hero {
 .about-exclusive::after,
 .about-section--mist::after,
 .featured-exclusives::after,
+.commission-process::after,
 .product-stockist::after,
 .featured-stockists::after {
   content: "";
@@ -783,6 +786,7 @@ section.hero {
 .about-exclusive:has(+ .site-footer)::after,
 .about-section--mist:has(+ .site-footer)::after,
 .featured-exclusives:has(+ .site-footer)::after,
+.commission-process:has(+ .site-footer)::after,
 .product-stockist:has(+ .site-footer)::after,
 .featured-stockists:has(+ .site-footer)::after {
   display: none;
@@ -796,6 +800,7 @@ section.hero {
 .about-exclusive:has(+ .site-footer),
 .about-section--mist:has(+ .site-footer),
 .featured-exclusives:has(+ .site-footer),
+.commission-process:has(+ .site-footer),
 .product-stockist:has(+ .site-footer),
 .featured-stockists:has(+ .site-footer) {
   margin-bottom: 0;
@@ -1693,7 +1698,7 @@ section.hero {
    ============================================ */
 .commission-process {
   padding: 80px 0;
-  background: var(--white);
+  background: var(--mist-blue);
 }
 
 .commission-process h2 {
