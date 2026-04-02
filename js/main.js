@@ -5,6 +5,7 @@
 (function () {
   "use strict";
 
+  function init() {
   // --- Navbar hide/show on scroll ---
   const header = document.querySelector(".site-header");
   let lastScrollY = window.scrollY;
@@ -352,5 +353,13 @@
   } else {
     // Fallback: show everything if no IntersectionObserver
     revealElements.forEach((el) => el.classList.add("revealed"));
+  }
+  } // end init
+
+  // Wait for components.js to inject header/footer, then initialise
+  if (document.querySelector(".site-header")) {
+    init();
+  } else {
+    document.addEventListener("componentsLoaded", init);
   }
 })();

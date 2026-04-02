@@ -20,68 +20,11 @@
         transition: none !important;
       }
     </style>
+      <script src="js/components.js"></script>
   </head>
   <body>
-    <!-- ====== HEADER / NAV ====== -->
-    <header class="site-header">
-      <div class="header-top">
-        <div class="header-top-inner">
-          <div class="logo">
-            <a href="index.html"
-              ><span class="logo-title">roelofs <span>&amp;</span> rubens</span
-              ><span class="logo-tagline"><span>unique ceramics</span></span></a
-            >
-          </div>
-          <div class="header-search">
-            <svg
-              class="search-icon"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            <input type="text" placeholder="Search" aria-label="Search" />
-          </div>
-          <button
-            class="hamburger"
-            aria-label="Open menu"
-            aria-expanded="false"
-          >
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="collections.html">Collections</a></li>
-          <li><a href="exclusives.html">Exclusives</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="trade.html">Trade</a></li>
-        </ul>
-      </nav>
-      <!-- Mobile slide-out menu -->
-      <div class="mobile-menu-overlay"></div>
-      <div class="mobile-menu">
-        <button class="mobile-menu-close" aria-label="Close menu">
-          &times;
-        </button>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="collections.html">Collections</a></li>
-          <li><a href="exclusives.html">Exclusives</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="trade.html">Trade</a></li>
-        </ul>
-      </div>
-    </header>
+    <div id="site-header"></div>
+
 
     <!-- ====== HERO ====== -->
     <section class="hero">
@@ -117,24 +60,24 @@
         <h2 class="reveal">Two ways to discover our decorations</h2>
         <p class="two-path-intro reveal">
           Browse seasonal and year-round collections through our Etsy shop, or
-          explore our exclusive venue designs and where to find them in person.
+          explore our bespoke venue designs and where to find them in person.
         </p>
         <div class="two-path-cards reveal">
           <div class="path-card">
-            <h3>Shop on Etsy</h3>
+            <h3>Shop our collection</h3>
             <p>
-              Seasonal favourites, year-round collections and gifts — browse and
-              buy through our Etsy shop.
+              Seasonal favourites, year-round collections and thoughtful gifts
+              — browse our collection online.
             </p>
-            <a href="#" class="btn btn-primary">Browse on Etsy</a>
+            <a href="collections.html" class="btn btn-primary">Browse the collection</a>
           </div>
           <div class="path-card">
-            <h3>Venue Exclusives</h3>
+            <h3>Bespoke decorations</h3>
             <p>
-              Over 100 bespoke designs for cathedrals, castles, museums and more
-              — available only through retailers.
+              Over 100 bespoke designs created for cathedrals, castles, museums
+              and more — available exclusively through our partner venues.
             </p>
-            <a href="#" class="btn btn-secondary">Explore Exclusives</a>
+            <a href="bespoke.html" class="btn btn-secondary">Explore bespoke</a>
           </div>
         </div>
       </div>
@@ -289,7 +232,7 @@
       <div class="container">
         <h2 class="reveal">Made for remarkable places</h2>
         <p class="exclusives-intro reveal">
-          Over the years, we have created more than 100 exclusive hanging
+          Over the years, we have created more than 100 bespoke hanging
           decorations for cathedrals, chapels, museums, castles and historic
           buildings across the UK and beyond.
         </p>
@@ -305,13 +248,13 @@
           <div class="feature-text">
             <h3>Iconic Landmarks Collection</h3>
             <p>
-              From Tower Bridge to Buckingham Palace, our exclusive landmark
+              From Tower Bridge to Buckingham Palace, our bespoke landmark
               decorations capture Britain's most treasured buildings in
               handcrafted ceramic. Each piece is individually painted and
               available only at select venues.
             </p>
             <a
-              href="exclusives-pages/exclusives-castles.html"
+              href="bespoke-pages/bespoke-castles.html"
               class="btn btn-primary"
               >Explore collection</a
             >
@@ -347,7 +290,7 @@
           <h2>Looking for something bespoke?</h2>
           <p>
             What began with one custom cathedral decoration grew into a
-            much-loved part of our work. We create exclusive ceramic decorations
+            much-loved part of our work. We create bespoke ceramic decorations
             for venues, shops and special commissions.
           </p>
           <a href="#" class="btn btn-primary">Get in Touch</a>
@@ -478,122 +421,8 @@
         </div>
       </div>
     </section>
-
     <!-- ====== FOOTER ====== -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <h4>Shop</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="collections.html">Collections</a></li>
-              <li><a href="exclusives.html">Exclusives</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Explore</h4>
-            <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="trade.html">Trade</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li>
-                <a href="mailto:info@roelofsrubens.co.uk"
-                  >info@roelofsrubens.co.uk</a
-                >
-              </li>
-              <li><a href="tel:+441488668154">+44 (0)1488 668154</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Subscribe</h4>
-            <p>Join our mailing list for seasonal news and studio updates.</p>
-            <form class="subscribe-form" onsubmit="return false;">
-              <input
-                type="email"
-                placeholder="Your email"
-                aria-label="Email address"
-              />
-              <button type="submit" class="btn btn-primary">Join</button>
-            </form>
-            <div class="social-icons">
-              <a
-                href="https://www.instagram.com/roelofs_and_rubens?igsh=MTJoeXo5MjhzNjB1eA=="
-                class="social-circle"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/share/1Keno32gbP/?mibextid=wwXIfr"
-                class="social-circle"
-                aria-label="Facebook"
-                target="_blank"
-                rel="noopener"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://www.tiktok.com/@roelofsandrubens?_r=1&_t=ZN-957Qx8RfaxK"
-                class="social-circle"
-                aria-label="TikTok"
-                target="_blank"
-                rel="noopener"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.74a4.85 4.85 0 0 1-1.01-.05z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <p class="footer-tagline">
-          Handmade ceramic decorations, designed in Berkshire.
-        </p>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Roelofs &amp; Rubens. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
 
     <script
       src="https://mcp.figma.com/mcp/html-to-design/capture.js"
