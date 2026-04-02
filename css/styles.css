@@ -960,6 +960,29 @@ section.hero {
   font-size: 1rem;
 }
 
+.feature-points {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.feature-points li {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  position: relative;
+  padding-left: 16px;
+}
+
+.feature-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--ink-blue);
+}
+
 /* ============================================
    BESPOKE TEASER
    ============================================ */
