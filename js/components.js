@@ -124,9 +124,78 @@
         '<p class="footer-tagline">Handmade ceramic decorations, designed in Berkshire.</p>' +
         '<div class="footer-bottom">' +
           '<p>&copy; 2026 Roelofs &amp; Rubens. All rights reserved.</p>' +
+          '<p class="footer-legal"><a href="' + p + 'terms.html">Terms &amp; Conditions of Sale</a></p>' +
         '</div>' +
       '</div>' +
     '</footer>';
+
+  // --- Cookie consent ---
+  var COOKIE_KEY = "rr_cookies";
+
+  function getCookieConsent() {
+    try { return localStorage.getItem(COOKIE_KEY); } catch (e) { return null; }
+  }
+
+  function setCookieConsent(val) {
+    try { localStorage.setItem(COOKIE_KEY, val); } catch (e) {}
+  }
+
+  function activateMaps() {
+    var gates = document.querySelectorAll(".map-consent-gate");
+    for (var i = 0; i < gates.length; i++) {
+      var src = gates[i].getAttribute("data-map-src");
+      if (src) {
+        var iframe = document.createElement("iframe");
+        iframe.src = src;
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.style.border = "0";
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("loading", "lazy");
+        iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+        iframe.setAttribute("title", "Roelofs & Rubens location — near Newbury, Berkshire");
+        gates[i].outerHTML = iframe.outerHTML;
+      }
+    }
+  }
+
+  function buildCookieBanner() {
+    return (
+      '<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice">' +
+        '<p>We use cookies from Google Maps to display an interactive map. See our <a href="' + p + 'terms.html">Terms &amp; Conditions</a> for details.</p>' +
+        '<div class="cookie-banner-actions">' +
+          '<button class="cookie-btn-accept" id="cookie-accept">Accept</button>' +
+          '<button class="cookie-btn-decline" id="cookie-decline">Decline</button>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function initCookieBanner() {
+    var consent = getCookieConsent();
+    if (consent === "accepted") {
+      activateMaps();
+      return;
+    }
+    if (consent === "declined") {
+      return;
+    }
+    // Show banner
+    var div = document.createElement("div");
+    div.innerHTML = buildCookieBanner();
+    document.body.appendChild(div.firstChild);
+
+    document.getElementById("cookie-accept").addEventListener("click", function () {
+      setCookieConsent("accepted");
+      document.getElementById("cookie-banner").remove();
+      activateMaps();
+    });
+
+    document.getElementById("cookie-decline").addEventListener("click", function () {
+      setCookieConsent("declined");
+      document.getElementById("cookie-banner").remove();
+    });
+  }
 
   // --- Inject once DOM is ready ---
   function inject() {
@@ -139,6 +208,8 @@
     if (footerEl) {
       footerEl.outerHTML = footerHTML;
     }
+
+    initCookieBanner();
 
     // Signal to main.js that components are ready
     document.dispatchEvent(new Event("componentsLoaded"));
