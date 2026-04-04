@@ -90,6 +90,7 @@
             '<ul>' +
               '<li><a href="' + p + 'about.html">About</a></li>' +
               '<li><a href="' + p + 'trade.html">Trade</a></li>' +
+              '<li><a href="' + p + 'terms.html">Terms &amp; Conditions</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="footer-col">' +
@@ -124,7 +125,6 @@
         '<p class="footer-tagline">Handmade ceramic decorations, designed in Berkshire.</p>' +
         '<div class="footer-bottom">' +
           '<p>&copy; 2026 Roelofs &amp; Rubens. All rights reserved.</p>' +
-          '<p class="footer-legal"><a href="' + p + 'terms.html">Terms &amp; Conditions of Sale</a></p>' +
         '</div>' +
       '</div>' +
     '</footer>';
@@ -162,7 +162,7 @@
   function buildCookieBanner() {
     return (
       '<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice">' +
-        '<p>We use cookies from Google Maps to display an interactive map. See our <a href="' + p + 'terms.html">Terms &amp; Conditions</a> for details.</p>' +
+        '<p>We use cookies to improve your experience on our site. By continuing to browse, you agree to our use of cookies. <a href="' + p + 'terms.html">Terms &amp; Conditions</a></p>' +
         '<div class="cookie-banner-actions">' +
           '<button class="cookie-btn-accept" id="cookie-accept">Accept</button>' +
           '<button class="cookie-btn-decline" id="cookie-decline">Decline</button>' +
