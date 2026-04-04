@@ -188,98 +188,14 @@
           castles, chapels, shops and other special places across the UK and
           beyond.
         </p>
-        <div class="carousel-wrapper reveal">
-          <button class="carousel-btn carousel-prev" aria-label="Previous">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <div class="carousel-track">
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/stonehenge.jpg"
-                  alt="Stonehenge bespoke decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Stonehenge</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/tower-bridge-lifestyle.jpg"
-                  alt="Tower Bridge bespoke decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Tower Bridge</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/big-ben.jpg"
-                  alt="Big Ben bespoke decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Big Ben</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/buckingham.jpg"
-                  alt="Buckingham Palace bespoke decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Buckingham Palace</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/windsor.jpg"
-                  alt="Windsor Castle bespoke decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Windsor Castle</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/kings-guard.jpg"
-                  alt="King's Guard bespoke decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">King's Guard</p>
-            </div>
-          </div>
-          <button class="carousel-btn carousel-next" aria-label="Next">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-        </div>
+        <div class="carousel-component" data-items='[
+          {"img":"assets/images/stonehenge.jpg","alt":"Stonehenge bespoke decoration","label":"Stonehenge"},
+          {"img":"assets/images/tower-bridge-lifestyle.jpg","alt":"Tower Bridge bespoke decoration","label":"Tower Bridge"},
+          {"img":"assets/images/big-ben.jpg","alt":"Big Ben bespoke decoration","label":"Big Ben"},
+          {"img":"assets/images/buckingham.jpg","alt":"Buckingham Palace bespoke decoration","label":"Buckingham Palace"},
+          {"img":"assets/images/windsor.jpg","alt":"Windsor Castle bespoke decoration","label":"Windsor Castle"},
+          {"img":"assets/images/kings-guard.jpg","alt":"King&#39;s Guard bespoke decoration","label":"King\u2019s Guard"}
+        ]'></div>
         <div class="about-exclusive-cta reveal">
           <a href="bespoke.html" class="btn btn-primary"
             >See Bespoke Collection</a
@@ -289,40 +205,10 @@
     </section>
 
     <!-- ====== 7. WHERE TO FIND US ====== -->
-    <section class="about-section">
-      <div class="container">
-        <div class="feature-block reveal">
-          <div class="feature-text">
-            <h2>Where to find us</h2>
-            <p>
-              We're based in Berkshire, a few miles from Newbury near the M4/A34
-              junction. If you'd like to get in touch about a commission,
-              retailer enquiry or visit, please contact us to arrange an
-              appointment.
-            </p>
-            <div class="location-details">
-              <p><strong>Email</strong><br />info@roelofsrubens.co.uk</p>
-              <p><strong>Phone</strong><br />+44 (0)1488 668154</p>
-            </div>
-            <a href="mailto:info@roelofsrubens.co.uk" class="btn btn-primary"
-              >Get in Touch</a
-            >
-          </div>
-          <div class="feature-image feature-image--map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79468.27246417992!2d-1.4!3d51.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876a5649c5b5281%3A0x48a3b1c82b912e15!2sNewbury%2C%20UK!5e0!3m2!1sen!2suk!4v1"
-              width="100%"
-              height="100%"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Roelofs &amp; Rubens location — near Newbury, Berkshire"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div id="contact-block"
+      data-heading="Where to find us"
+      data-body="We&rsquo;re based in Berkshire, a few miles from Newbury near the M4/A34 junction. If you&rsquo;d like to get in touch about a commission, retailer enquiry or visit, please contact us to arrange an appointment."
+      data-btn-text="Get in Touch"></div>
     <!-- ====== FOOTER ====== -->
     <div id="site-footer"></div>
 
