@@ -129,6 +129,104 @@
       '</div>' +
     '</footer>';
 
+  // --- Shared SVGs ---
+  var prevArrowSVG =
+    '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<polyline points="15 18 9 12 15 6" />' +
+    '</svg>';
+
+  var nextArrowSVG =
+    '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<polyline points="9 18 15 12 9 6" />' +
+    '</svg>';
+
+  // --- Bespoke Teaser Component ---
+  // Placeholder: <div id="bespoke-teaser" data-body="..." data-btn-text="..." data-btn-href="..."></div>
+  function buildBespokeTeaser(el) {
+    var body = el.getAttribute("data-body") || "";
+    var btnText = el.getAttribute("data-btn-text") || "Get in Touch";
+    var btnHref = el.getAttribute("data-btn-href") || p + "trade.html";
+    return (
+      '<section class="bespoke-teaser">' +
+        '<div class="container">' +
+          '<div class="bespoke-inner reveal">' +
+            '<h2>Looking for something bespoke?</h2>' +
+            '<p>' + body + '</p>' +
+            '<a href="' + btnHref + '" class="btn btn-primary">' + btnText + '</a>' +
+          '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  // --- Contact Block Component ---
+  // Placeholder: <div id="contact-block" data-heading="..." data-body="..."></div>
+  // Map loads only after cookie consent is given.
+  function buildContactBlock(el) {
+    var heading = el.getAttribute("data-heading") || "Get in touch";
+    var body = el.getAttribute("data-body") || "";
+    var btnText = el.getAttribute("data-btn-text") || "Contact us";
+    var mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79468.27246417992!2d-1.4!3d51.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876a5649c5b5281%3A0x48a3b1c82b912e15!2sNewbury%2C%20UK!5e0!3m2!1sen!2suk!4v1";
+    var mapContent = getCookieConsent() === "accepted"
+      ? '<iframe src="' + mapSrc + '" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Roelofs &amp; Rubens location"></iframe>'
+      : '<div class="map-consent-gate" data-map-src="' + mapSrc + '"><div class="map-consent-inner"><p>Accept cookies to view the interactive map.</p></div></div>';
+    return (
+      '<section class="about-section">' +
+        '<div class="container">' +
+          '<div class="feature-block reveal">' +
+            '<div class="feature-text">' +
+              '<h2>' + heading + '</h2>' +
+              '<p>' + body + '</p>' +
+              '<div class="location-details">' +
+                '<p><strong>Email</strong><br /><a href="mailto:info@roelofsrubens.co.uk">info@roelofsrubens.co.uk</a></p>' +
+                '<p><strong>Phone</strong><br /><a href="tel:+441488668154">+44 (0)1488 668154</a></p>' +
+              '</div>' +
+              '<a href="mailto:info@roelofsrubens.co.uk" class="btn btn-primary">' + btnText + '</a>' +
+            '</div>' +
+            '<div class="feature-image feature-image--map">' +
+              mapContent +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  // --- Carousel Component ---
+  // Placeholder: <div class="carousel-component" data-items='[{"img":"...","alt":"...","label":"...","href":"..."}]'></div>
+  function buildCarousel(el) {
+    var items = [];
+    try {
+      items = JSON.parse(el.getAttribute("data-items") || "[]");
+    } catch (e) {
+      return "";
+    }
+    if (!items.length) return "";
+
+    var cards = "";
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var tag = item.href ? "a" : "div";
+      var hrefAttr = item.href ? ' href="' + item.href + '"' : "";
+      var targetAttr = item.href && item.href.indexOf("http") === 0 ? ' target="_blank" rel="noopener"' : "";
+      cards +=
+        '<' + tag + ' class="carousel-card"' + hrefAttr + targetAttr + '>' +
+          '<div class="card-image">' +
+            '<img src="' + (item.img || "") + '" alt="' + (item.alt || "") + '" loading="lazy" />' +
+          '</div>' +
+          '<p class="card-label">' + (item.label || "") + '</p>' +
+        '</' + tag + '>';
+    }
+
+    return (
+      '<div class="carousel-wrapper reveal">' +
+        '<button class="carousel-btn carousel-prev" aria-label="Previous">' + prevArrowSVG + '</button>' +
+        '<div class="carousel-track">' + cards + '</div>' +
+        '<button class="carousel-btn carousel-next" aria-label="Next">' + nextArrowSVG + '</button>' +
+      '</div>'
+    );
+  }
+
   // --- Cookie consent ---
   var COOKIE_KEY = "rr_cookies";
 
@@ -174,7 +272,6 @@
   function initCookieBanner() {
     var consent = getCookieConsent();
     if (consent === "accepted") {
-      activateMaps();
       return;
     }
     if (consent === "declined") {
@@ -207,6 +304,27 @@
     var footerEl = document.getElementById("site-footer");
     if (footerEl) {
       footerEl.outerHTML = footerHTML;
+    }
+
+    // Bespoke teaser
+    var teaserEl = document.getElementById("bespoke-teaser");
+    if (teaserEl) {
+      teaserEl.outerHTML = buildBespokeTeaser(teaserEl);
+    }
+
+    // Contact block
+    var contactEl = document.getElementById("contact-block");
+    if (contactEl) {
+      contactEl.outerHTML = buildContactBlock(contactEl);
+    }
+
+    // Carousels
+    var carouselEls = document.querySelectorAll(".carousel-component");
+    for (var i = 0; i < carouselEls.length; i++) {
+      var html = buildCarousel(carouselEls[i]);
+      if (html) {
+        carouselEls[i].outerHTML = html;
+      }
     }
 
     initCookieBanner();

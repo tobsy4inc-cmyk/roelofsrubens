@@ -118,98 +118,14 @@
           From iconic landmarks to beloved heritage sites, each bespoke
           decoration captures a place in handmade ceramic.
         </p>
-        <div class="carousel-wrapper reveal">
-          <button class="carousel-btn carousel-prev" aria-label="Previous">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <div class="carousel-track">
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/stonehenge.jpg"
-                  alt="Stonehenge bespoke ceramic decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Stonehenge</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/tower-bridge-lifestyle.jpg"
-                  alt="Tower Bridge bespoke ceramic decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Tower Bridge</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/big-ben.jpg"
-                  alt="Big Ben bespoke ceramic decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Big Ben</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/buckingham.jpg"
-                  alt="Buckingham Palace bespoke ceramic decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Buckingham Palace</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/windsor.jpg"
-                  alt="Windsor Castle bespoke ceramic decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">Windsor Castle</p>
-            </div>
-            <div class="carousel-card">
-              <div class="card-image">
-                <img
-                  src="assets/images/kings-guard.jpg"
-                  alt="King's Guard bespoke ceramic decoration"
-                  loading="lazy"
-                />
-              </div>
-              <p class="card-label">King&rsquo;s Guard</p>
-            </div>
-          </div>
-          <button class="carousel-btn carousel-next" aria-label="Next">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-        </div>
+        <div class="carousel-component" data-items='[
+          {"img":"assets/images/stonehenge.jpg","alt":"Stonehenge bespoke ceramic decoration","label":"Stonehenge"},
+          {"img":"assets/images/tower-bridge-lifestyle.jpg","alt":"Tower Bridge bespoke ceramic decoration","label":"Tower Bridge"},
+          {"img":"assets/images/big-ben.jpg","alt":"Big Ben bespoke ceramic decoration","label":"Big Ben"},
+          {"img":"assets/images/buckingham.jpg","alt":"Buckingham Palace bespoke ceramic decoration","label":"Buckingham Palace"},
+          {"img":"assets/images/windsor.jpg","alt":"Windsor Castle bespoke ceramic decoration","label":"Windsor Castle"},
+          {"img":"assets/images/kings-guard.jpg","alt":"King&#39;s Guard bespoke ceramic decoration","label":"King\u2019s Guard"}
+        ]'></div>
       </div>
     </section>
 
@@ -283,21 +199,9 @@
     </section>
 
     <!-- ====== 5. BESPOKE COMMISSIONS ====== -->
-    <section class="bespoke-teaser">
-      <div class="container">
-        <div class="bespoke-inner reveal">
-          <h2>Looking for something bespoke?</h2>
-          <p>
-            We also create bespoke ceramic decorations for shops, venues,
-            museums, cathedrals and other special places. If you have a
-            commission in mind, we would love to hear from you.
-          </p>
-          <a href="trade.html" class="btn btn-primary"
-            >Ask About a Commission</a
-          >
-        </div>
-      </div>
-    </section>
+    <div id="bespoke-teaser"
+      data-body="We also create bespoke ceramic decorations for shops, venues, museums, cathedrals and other special places. If you have a commission in mind, we would love to hear from you."
+      data-btn-text="Ask About a Commission"></div>
 
     <!-- ====== 5. STOCKIST DIRECTION ====== -->
     <section class="stockist-direction">
