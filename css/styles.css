@@ -1227,6 +1227,21 @@ section.hero {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.footer-legal {
+  margin-top: 8px;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* ============================================
    PAGE HERO (inner pages)
    ============================================ */
@@ -2852,5 +2867,200 @@ section.hero {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+/* ============================================
+   LEGAL CONTENT (Terms & Conditions)
+   ============================================ */
+.legal-content {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+.legal-body {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.legal-jumplinks {
+  background: var(--mist-blue);
+  border-radius: var(--radius-card);
+  padding: 20px 28px;
+  margin-bottom: 48px;
+}
+
+.legal-jumplinks p {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink-blue);
+  margin-bottom: 8px;
+}
+
+.legal-jumplinks ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.legal-jumplinks a {
+  color: var(--ink-blue);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-jumplinks a:hover {
+  color: var(--ink-blue-hover);
+}
+
+.legal-body h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-blue);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--soft-line-grey);
+}
+
+.legal-body h2::after {
+  display: none;
+}
+
+.legal-body p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--body-text);
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.legal-body p:first-of-type,
+.legal-body h2 + p {
+  padding-left: 0;
+}
+
+.legal-body a {
+  color: var(--ink-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ============================================
+   COOKIE BANNER
+   ============================================ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--ink-blue);
+  color: var(--white);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-banner p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.cookie-banner a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-btn-accept {
+  background: var(--white);
+  color: var(--ink-blue);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.cookie-btn-accept:hover {
+  opacity: 0.85;
+}
+
+.cookie-btn-decline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px 20px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.cookie-btn-decline:hover {
+  border-color: var(--white);
+}
+
+/* ============================================
+   MAP CONSENT GATE
+   ============================================ */
+.map-consent-gate {
+  width: 100%;
+  height: 100%;
+  background: var(--mist-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-img);
+  min-height: 300px;
+}
+
+.map-consent-inner {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.map-consent-inner p {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  margin-bottom: 16px;
+  max-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .cookie-banner-actions {
+    width: 100%;
+  }
+
+  .cookie-btn-accept,
+  .cookie-btn-decline {
+    flex: 1;
+    text-align: center;
   }
 }

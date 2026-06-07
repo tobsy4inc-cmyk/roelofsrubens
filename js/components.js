@@ -90,6 +90,7 @@
             '<ul>' +
               '<li><a href="' + p + 'about.html">About</a></li>' +
               '<li><a href="' + p + 'trade.html">Trade</a></li>' +
+              '<li><a href="' + p + 'terms.html">Terms &amp; Conditions</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="footer-col">' +
@@ -160,10 +161,15 @@
 
   // --- Contact Block Component ---
   // Placeholder: <div id="contact-block" data-heading="..." data-body="..."></div>
+  // Map loads only after cookie consent is given.
   function buildContactBlock(el) {
     var heading = el.getAttribute("data-heading") || "Get in touch";
     var body = el.getAttribute("data-body") || "";
     var btnText = el.getAttribute("data-btn-text") || "Contact us";
+    var mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79468.27246417992!2d-1.4!3d51.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876a5649c5b5281%3A0x48a3b1c82b912e15!2sNewbury%2C%20UK!5e0!3m2!1sen!2suk!4v1";
+    var mapContent = getCookieConsent() === "accepted"
+      ? '<iframe src="' + mapSrc + '" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Roelofs &amp; Rubens location"></iframe>'
+      : '<div class="map-consent-gate" data-map-src="' + mapSrc + '"><div class="map-consent-inner"><p>Accept cookies to view the interactive map.</p></div></div>';
     return (
       '<section class="about-section">' +
         '<div class="container">' +
@@ -178,12 +184,7 @@
               '<a href="mailto:info@roelofsrubens.co.uk" class="btn btn-primary">' + btnText + '</a>' +
             '</div>' +
             '<div class="feature-image feature-image--map">' +
-              '<iframe ' +
-                'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79468.27246417992!2d-1.4!3d51.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876a5649c5b5281%3A0x48a3b1c82b912e15!2sNewbury%2C%20UK!5e0!3m2!1sen!2suk!4v1" ' +
-                'width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy" ' +
-                'referrerpolicy="no-referrer-when-downgrade" ' +
-                'title="Roelofs &amp; Rubens location &mdash; near Newbury, Berkshire">' +
-              '</iframe>' +
+              mapContent +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -193,7 +194,6 @@
 
   // --- Carousel Component ---
   // Placeholder: <div class="carousel-component" data-items='[{"img":"...","alt":"...","label":"...","href":"..."}]'></div>
-  // Items with href become <a> tags; without become <div> tags.
   function buildCarousel(el) {
     var items = [];
     try {
@@ -227,6 +227,73 @@
     );
   }
 
+  // --- Cookie consent ---
+  var COOKIE_KEY = "rr_cookies";
+
+  function getCookieConsent() {
+    try { return localStorage.getItem(COOKIE_KEY); } catch (e) { return null; }
+  }
+
+  function setCookieConsent(val) {
+    try { localStorage.setItem(COOKIE_KEY, val); } catch (e) {}
+  }
+
+  function activateMaps() {
+    var gates = document.querySelectorAll(".map-consent-gate");
+    for (var i = 0; i < gates.length; i++) {
+      var src = gates[i].getAttribute("data-map-src");
+      if (src) {
+        var iframe = document.createElement("iframe");
+        iframe.src = src;
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.style.border = "0";
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("loading", "lazy");
+        iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+        iframe.setAttribute("title", "Roelofs & Rubens location — near Newbury, Berkshire");
+        gates[i].outerHTML = iframe.outerHTML;
+      }
+    }
+  }
+
+  function buildCookieBanner() {
+    return (
+      '<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice">' +
+        '<p>We use cookies to improve your experience on our site. By continuing to browse, you agree to our use of cookies. <a href="' + p + 'terms.html">Terms &amp; Conditions</a></p>' +
+        '<div class="cookie-banner-actions">' +
+          '<button class="cookie-btn-accept" id="cookie-accept">Accept</button>' +
+          '<button class="cookie-btn-decline" id="cookie-decline">Decline</button>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function initCookieBanner() {
+    var consent = getCookieConsent();
+    if (consent === "accepted") {
+      return;
+    }
+    if (consent === "declined") {
+      return;
+    }
+    // Show banner
+    var div = document.createElement("div");
+    div.innerHTML = buildCookieBanner();
+    document.body.appendChild(div.firstChild);
+
+    document.getElementById("cookie-accept").addEventListener("click", function () {
+      setCookieConsent("accepted");
+      document.getElementById("cookie-banner").remove();
+      activateMaps();
+    });
+
+    document.getElementById("cookie-decline").addEventListener("click", function () {
+      setCookieConsent("declined");
+      document.getElementById("cookie-banner").remove();
+    });
+  }
+
   // --- Inject once DOM is ready ---
   function inject() {
     var headerEl = document.getElementById("site-header");
@@ -251,7 +318,7 @@
       contactEl.outerHTML = buildContactBlock(contactEl);
     }
 
-    // Carousels — process all placeholder elements
+    // Carousels
     var carouselEls = document.querySelectorAll(".carousel-component");
     for (var i = 0; i < carouselEls.length; i++) {
       var html = buildCarousel(carouselEls[i]);
@@ -259,6 +326,8 @@
         carouselEls[i].outerHTML = html;
       }
     }
+
+    initCookieBanner();
 
     // Signal to main.js that components are ready
     document.dispatchEvent(new Event("componentsLoaded"));
