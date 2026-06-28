@@ -1716,6 +1716,16 @@ section.hero {
   background: var(--mist-blue);
 }
 
+.commission-process--white {
+  background: var(--white);
+  margin-bottom: 0;
+}
+
+.commission-process--white::before,
+.commission-process--white::after {
+  display: none;
+}
+
 .commission-process h2 {
   text-align: center;
   margin-bottom: 48px;
@@ -1812,7 +1822,7 @@ section.hero {
    PRODUCT DETAIL PAGE
    ============================================ */
 .product-detail {
-  padding: 48px 0 80px;
+  padding: 80px 0 80px;
   background: var(--white);
 }
 

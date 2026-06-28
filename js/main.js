@@ -101,6 +101,32 @@
   const countEl = document.getElementById("catalogue-count");
 
   if (filterSelect && countEl) {
+    const catalogueH1 = document.querySelector(".catalogue-heading h1");
+    const catalogueIntro = document.querySelector(".catalogue-heading .catalogue-intro");
+
+    const categoryContent = {
+      all: {
+        title: "All Bespoke Decorations",
+        intro: "Browse our complete catalogue of bespoke ceramic decorations, created for venues across the UK and beyond. Each piece is handmade in our Berkshire studio and available exclusively through its retailer."
+      },
+      cathedrals: {
+        title: "Cathedrals &amp; Churches",
+        intro: "Handmade ceramic decorations created exclusively for cathedrals, churches, abbeys and chapels across the UK and beyond. Each piece captures the architecture and character of its venue."
+      },
+      castles: {
+        title: "Castles &amp; Landmarks",
+        intro: "Handmade ceramic decorations capturing iconic castles, palaces, bridges and landmarks. Each piece is individually shaped and painted in our Berkshire studio, available exclusively through its venue."
+      },
+      museums: {
+        title: "Museums &amp; Buildings",
+        intro: "Handmade ceramic decorations created for museums, galleries, historic houses and cultural venues. Each design is crafted to capture the character of its building."
+      },
+      animals: {
+        title: "Animals &amp; Objects",
+        intro: "From Highland cows to rollercoasters, these handmade ceramic decorations capture the character and charm of animals, objects and curiosities found at venues across the UK."
+      }
+    };
+
     filterSelect.addEventListener("change", function () {
       const value = this.value;
       const cards = document.querySelectorAll(".product-card");
@@ -118,6 +144,11 @@
 
       countEl.textContent =
         visible + " decoration" + (visible !== 1 ? "s" : "");
+
+      if (catalogueH1 && catalogueIntro && categoryContent[value]) {
+        catalogueH1.innerHTML = categoryContent[value].title;
+        catalogueIntro.textContent = categoryContent[value].intro;
+      }
     });
   }
 

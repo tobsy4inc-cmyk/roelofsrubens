@@ -29,21 +29,6 @@
 
     <div class="catalogue-page">
       <div class="container">
-        <div class="catalogue-back-bar">
-          <a href="../bespoke.html" class="catalogue-back">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            Back to Bespokes
-          </a>
-        </div>
         <div class="catalogue-heading">
           <h1>All Bespoke Decorations</h1>
           <p class="catalogue-intro">
@@ -58,23 +43,12 @@
             <select
               class="catalogue-filter-select"
               id="subcategory-filter"
-              onchange="
-                if (this.value !== 'all') window.location.href = this.value;
-              "
             >
               <option value="all" selected>All Categories</option>
-              <option value="bespoke-cathedrals.html">
-                Cathedrals &amp; Churches
-              </option>
-              <option value="bespoke-castles.html">
-                Castles &amp; Landmarks
-              </option>
-              <option value="bespoke-museums.html">
-                Museums &amp; Buildings
-              </option>
-              <option value="bespoke-animals.html">
-                Animals &amp; Objects
-              </option>
+              <option value="cathedrals">Cathedrals &amp; Churches</option>
+              <option value="castles">Castles &amp; Landmarks</option>
+              <option value="museums">Museums &amp; Buildings</option>
+              <option value="animals">Animals &amp; Objects</option>
             </select>
           </div>
           <span class="catalogue-count" id="catalogue-count"
@@ -83,10 +57,10 @@
         </div>
         <div class="catalogue-grid">
           <div class="product-grid">
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-abbotsford-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/abbotsford-house-1.jpg"
                   alt="Abbotsford House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -94,10 +68,10 @@
               <p class="card-label">Abbotsford House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-anfield-stadium.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/anfield-stadium-1.jpg"
                   alt="Anfield Stadium — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -105,10 +79,10 @@
               <p class="card-label">Anfield Stadium</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-arley-hall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/arley-hall-1.jpg"
                   alt="Arley Hall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -116,10 +90,10 @@
               <p class="card-label">Arley Hall</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-ba-ball-doonies.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/ba-ball-doonies-1.jpg"
                   alt="Ba Ball Doonies — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -127,10 +101,10 @@
               <p class="card-label">Ba Ball Doonies</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-ba-ball-uppies.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/ba-ball-uppies-1.jpg"
                   alt="Ba Ball Uppies — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -138,10 +112,10 @@
               <p class="card-label">Ba Ball Uppies</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-bath-abbey.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bath-abbey-1.jpg"
                   alt="Bath Abbey — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -149,10 +123,10 @@
               <p class="card-label">Bath Abbey</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-bath-roman-baths.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bath-roman-baths-1.jpg"
                   alt="Bath Roman Baths — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -160,10 +134,10 @@
               <p class="card-label">Bath Roman Baths</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-battersea-power-station.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/battersea-power-station-1.jpg"
                   alt="Battersea Power Station — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -171,10 +145,10 @@
               <p class="card-label">Battersea Power Station</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-bayleaf-farmstead.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bayleaf-farmstead-1.jpg"
                   alt="Bayleaf Farmstead — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -182,10 +156,10 @@
               <p class="card-label">Bayleaf Farmstead</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-beaulieu-palace-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/beaulieu-palace-house-1.jpg"
                   alt="Beaulieu Palace House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -193,10 +167,10 @@
               <p class="card-label">Beaulieu Palace House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-beatles-abbey-road.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/beatles-abbey-road-1.jpg"
                   alt="Beatles Abbey Road — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -204,10 +178,10 @@
               <p class="card-label">Beatles Abbey Road</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-belted-galloway-cow.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/belted-galloway-cow-1.jpg"
                   alt="Belted Galloway Cow — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -215,10 +189,10 @@
               <p class="card-label">Belted Galloway Cow</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-beverley-minster.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/beverley-minster-1.jpg"
                   alt="Beverley Minster — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -226,10 +200,10 @@
               <p class="card-label">Beverley Minster</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-bibury-arlington-row.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bibury-arlington-row-1.jpg"
                   alt="Bibury Arlington Row — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -237,10 +211,10 @@
               <p class="card-label">Bibury Arlington Row</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-bibury-trout.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bibury-trout-1.jpg"
                   alt="Bibury Trout — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -248,10 +222,10 @@
               <p class="card-label">Bibury Trout</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-big-ben.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/big-ben.jpg"
+                  src="../assets/images/products/big-ben-1.jpg"
                   alt="Big Ben — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -259,10 +233,10 @@
               <p class="card-label">Big Ben</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-biggar-museum.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/biggar-museum-1.jpg"
                   alt="Biggar Museum — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -270,10 +244,10 @@
               <p class="card-label">Biggar Museum</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-black-mountain-rocking-chair.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/black-mountain-rocking-chair-1.jpg"
                   alt="Black Mountain Rocking Chair — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -281,10 +255,10 @@
               <p class="card-label">Black Mountain Rocking Chair</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-black-taxi.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/black-taxi-1.jpg"
                   alt="Black Taxi — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -292,10 +266,10 @@
               <p class="card-label">Black Taxi</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-bluecoat-liverpool.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bluecoat-liverpool-1.jpg"
                   alt="Bluecoat, Liverpool — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -303,10 +277,10 @@
               <p class="card-label">Bluecoat, Liverpool</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-bournemouth-pier.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bournemouth-pier-1.jpg"
                   alt="Bournemouth Pier — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -314,10 +288,10 @@
               <p class="card-label">Bournemouth Pier</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-bowes-museum.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bowes-museum-1.jpg"
                   alt="Bowes Museum — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -325,10 +299,10 @@
               <p class="card-label">Bowes Museum</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-bowes-museum-swan.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bowes-museum-swan-1.jpg"
                   alt="Bowes Museum Swan — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -336,10 +310,10 @@
               <p class="card-label">Bowes Museum Swan</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-bridge-of-sighs-oxford.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/bridge-of-sighs-oxford-1.jpg"
                   alt="Bridge of Sighs, Oxford — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -347,10 +321,10 @@
               <p class="card-label">Bridge of Sighs, Oxford</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-buckingham-palace.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/buckingham.jpg"
+                  src="../assets/images/products/buckingham-palace-1.jpg"
                   alt="Buckingham Palace — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -358,10 +332,10 @@
               <p class="card-label">Buckingham Palace</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-cawdor-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/cawdor-castle-1.jpg"
                   alt="Cawdor Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -369,10 +343,10 @@
               <p class="card-label">Cawdor Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-chester-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/chester-cathedral-1.jpg"
                   alt="Chester Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -391,10 +365,10 @@
               <p class="card-label">Chesterfield Crooked Spire</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-christ-church-cathedral-falkland-islands.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/christ-church-cathedral-falkland-islands-1.jpg"
                   alt="Christ Church Cathedral, Falkland Islands — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -404,10 +378,10 @@
               </p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-christmas-jumper-spitfire.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/christmas-jumper-spitfire-1.jpg"
                   alt="Christmas Jumper Spitfire — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -415,10 +389,10 @@
               <p class="card-label">Christmas Jumper Spitfire</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-clifton-suspension-bridge.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/clifton-suspension-bridge-1.jpg"
                   alt="Clifton Suspension Bridge — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -426,10 +400,10 @@
               <p class="card-label">Clifton Suspension Bridge</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-court-barn.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/court-barn-1.jpg"
                   alt="Court Barn — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -437,10 +411,10 @@
               <p class="card-label">Court Barn</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-coventry-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/coventry-cathedral-1.jpg"
                   alt="Coventry Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -448,10 +422,10 @@
               <p class="card-label">Coventry Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-cromarty-courthouse-museum.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/cromarty-courthouse-museum-1.jpg"
                   alt="Cromarty Courthouse Museum — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -459,10 +433,10 @@
               <p class="card-label">Cromarty Courthouse Museum</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-cyfarthfa-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/cyfarthfa-castle-1.jpg"
                   alt="Cyfarthfa Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -470,10 +444,10 @@
               <p class="card-label">Cyfarthfa Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-divinity-school-oxford.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/divinity-school-oxford-1.jpg"
                   alt="Divinity School, Oxford — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -481,10 +455,10 @@
               <p class="card-label">Divinity School, Oxford</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-doddington-hall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/doddington-hall-1.jpg"
                   alt="Doddington Hall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -492,10 +466,10 @@
               <p class="card-label">Doddington Hall</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-dunnottar-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/dunnottar-castle-1.jpg"
                   alt="Dunnottar Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -503,10 +477,10 @@
               <p class="card-label">Dunnottar Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-dunollie-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/dunollie-castle-1.jpg"
                   alt="Dunollie Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -514,10 +488,10 @@
               <p class="card-label">Dunollie Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-durham-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/durham-cathedral-1.jpg"
                   alt="Durham Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -525,10 +499,10 @@
               <p class="card-label">Durham Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-edinburgh-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/edinburgh-castle-1.jpg"
                   alt="Edinburgh Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -536,10 +510,10 @@
               <p class="card-label">Edinburgh Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-edinburgh-castle-crown.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/edinburgh-castle-crown-1.jpg"
                   alt="Edinburgh Castle Crown — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -547,21 +521,21 @@
               <p class="card-label">Edinburgh Castle Crown</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-elizabeth-tower.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
-                  alt="Elizabeth Tower — handmade ceramic decoration"
+                  src="../assets/images/products/elizabeth-tower-1.jpg"
+                  alt="Big Ben — handmade ceramic decoration"
                   loading="lazy"
                 />
               </div>
-              <p class="card-label">Elizabeth Tower</p></a
+              <p class="card-label">Big Ben</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-fair-isle-jumper-board.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/fair-isle-jumper-board-1.jpg"
                   alt="Fair Isle Jumper Board — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -569,10 +543,10 @@
               <p class="card-label">Fair Isle Jumper Board</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-floors-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/floors-castle-1.jpg"
                   alt="Floors Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -580,10 +554,10 @@
               <p class="card-label">Floors Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-gawthorpe-hall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/gawthorpe-hall-1.jpg"
                   alt="Gawthorpe Hall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -591,10 +565,10 @@
               <p class="card-label">Gawthorpe Hall</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-glastonbury-abbey.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/glastonbury-abbey-1.jpg"
                   alt="Glastonbury Abbey — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -602,10 +576,10 @@
               <p class="card-label">Glastonbury Abbey</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-glyndebourne-opera-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/glyndebourne-opera-house-1.jpg"
                   alt="Glyndebourne Opera House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -613,10 +587,10 @@
               <p class="card-label">Glyndebourne Opera House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-goodison-park-stadium.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/goodison-park-stadium-1.jpg"
                   alt="Goodison Park Stadium — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -624,10 +598,10 @@
               <p class="card-label">Goodison Park Stadium</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-gretna-green-blacksmiths-shop.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/gretna-green-blacksmiths-shop-1.jpg"
                   alt="Gretna Green Blacksmiths Shop — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -635,10 +609,10 @@
               <p class="card-label">Gretna Green Blacksmiths Shop</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-greyfriars-bobby.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/greyfriars-bobby-1.jpg"
                   alt="Greyfriars Bobby — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -646,10 +620,10 @@
               <p class="card-label">Greyfriars Bobby</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-het-scheepvaartmuseum-amsterdam.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/het-scheepvaartmuseum-amsterdam-1.jpg"
                   alt="Het Scheepvaartmuseum, Amsterdam — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -657,10 +631,10 @@
               <p class="card-label">Het Scheepvaartmuseum, Amsterdam</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-highclere-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/highclere-castle-1.jpg"
                   alt="Highclere Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -668,10 +642,10 @@
               <p class="card-label">Highclere Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-highland-cow-inveraray.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/bear.jpg"
+                  src="../assets/images/products/highland-cow-inveraray-1.jpg"
                   alt="Highland Cow (Inveraray) — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -679,10 +653,10 @@
               <p class="card-label">Highland Cow (Inveraray)</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-hoogwegt-cow.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/hoogwegt-cow-1.jpg"
                   alt="Hoogwegt Cow — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -690,10 +664,10 @@
               <p class="card-label">Hoogwegt Cow</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-houses-of-parliament.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/houses-of-parliament-1.jpg"
                   alt="Houses of Parliament — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -701,10 +675,10 @@
               <p class="card-label">Houses of Parliament</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-husavikurkirkja-iceland.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/husavikurkirkja-iceland-1.jpg"
                   alt="Husavikurkirkja, Iceland — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -712,10 +686,10 @@
               <p class="card-label">Husavikurkirkja, Iceland</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-inveraray-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/inveraray-castle-1.jpg"
                   alt="Inveraray Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -723,10 +697,10 @@
               <p class="card-label">Inveraray Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-iona-abbey.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/iona-abbey-1.jpg"
                   alt="Iona Abbey — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -734,10 +708,10 @@
               <p class="card-label">Iona Abbey</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-iwm-spitfire.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/iwm-spitfire-1.jpg"
                   alt="IWM Spitfire — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -745,10 +719,10 @@
               <p class="card-label">IWM Spitfire</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-kasteel-amerongen.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/kasteel-amerongen-1.jpg"
                   alt="Kasteel Amerongen — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -756,10 +730,10 @@
               <p class="card-label">Kasteel Amerongen</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-kasteel-de-haar.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/kasteel-de-haar-1.jpg"
                   alt="Kasteel de Haar — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -767,10 +741,10 @@
               <p class="card-label">Kasteel de Haar</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-kelmscott-manor.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/kelmscott-manor-1.jpg"
                   alt="Kelmscott Manor — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -778,10 +752,10 @@
               <p class="card-label">Kelmscott Manor</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-kew-botanic-gardens-palm-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/kew-botanic-gardens-palm-house-1.jpg"
                   alt="Kew Botanic Gardens Palm House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -789,10 +763,10 @@
               <p class="card-label">Kew Botanic Gardens Palm House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-king-penguin-pair.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/king-penguin-pair-1.jpg"
                   alt="King Penguin Pair — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -800,10 +774,10 @@
               <p class="card-label">King Penguin Pair</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" href="../products/product-kings-guard.html" data-subcategory="animals"
               ><div class="card-image">
                 <img
-                  src="../assets/images/kings-guard.jpg"
+                  src="../assets/images/products/kings-guard-1.jpg"
                   alt="King's Guard — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -811,10 +785,10 @@
               <p class="card-label">King&rsquo;s Guard</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-liberty-building.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/liberty-building-1.jpg"
                   alt="Liberty Building — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -822,10 +796,10 @@
               <p class="card-label">Liberty Building</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-linlithgow-palace.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/linlithgow-palace-1.jpg"
                   alt="Linlithgow Palace — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -833,10 +807,10 @@
               <p class="card-label">Linlithgow Palace</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-liverpool-anglican-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/liverpool-anglican-cathedral-1.jpg"
                   alt="Liverpool Anglican Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -844,10 +818,10 @@
               <p class="card-label">Liverpool Anglican Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-liverpool-liver-building.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/liverpool-liver-building-1.jpg"
                   alt="Liverpool Liver Building — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -866,10 +840,10 @@
               <p class="card-label">Liverpool Liver Building (Black)</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-liverpool-liver-building-with-rainbow.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/liverpool-liver-building-with-rainbow-1.jpg"
                   alt="Liverpool Liver Building with Rainbow — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -877,10 +851,10 @@
               <p class="card-label">Liverpool Liver Building with Rainbow</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-liverpool-metropolitan-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/liverpool-metropolitan-cathedral-1.jpg"
                   alt="Liverpool Metropolitan Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -899,10 +873,10 @@
               <p class="card-label">Liverpool Sefton Park Palm House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-liverpool-three-graces.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/liverpool-three-graces-1.jpg"
                   alt="Liverpool Three Graces — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -910,10 +884,10 @@
               <p class="card-label">Liverpool Three Graces</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-london-bus.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/london-bus-1.jpg"
                   alt="London Bus — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -921,10 +895,10 @@
               <p class="card-label">London Bus</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-london-phone-box.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/london-phone-box-1.jpg"
                   alt="London Phone Box — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -932,10 +906,10 @@
               <p class="card-label">London Phone Box</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-london-post-box.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/london-post-box-1.jpg"
                   alt="London Post Box — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -943,10 +917,10 @@
               <p class="card-label">London Post Box</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-longleat-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/longleat-house-1.jpg"
                   alt="Longleat House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -954,10 +928,10 @@
               <p class="card-label">Longleat House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-loop-the-loop-rollercoaster.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/loop-the-loop-rollercoaster-1.jpg"
                   alt="Loop-the-Loop Rollercoaster — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -965,10 +939,10 @@
               <p class="card-label">Loop-the-Loop Rollercoaster</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-lossiemouth-east-beach-bridge.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/lossiemouth-east-beach-bridge-1.jpg"
                   alt="Lossiemouth East Beach Bridge — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -976,10 +950,10 @@
               <p class="card-label">Lossiemouth East Beach Bridge</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-lowther-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/lowther-castle-1.jpg"
                   alt="Lowther Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -987,10 +961,10 @@
               <p class="card-label">Lowther Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-lulworth-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/lulworth-castle-1.jpg"
                   alt="Lulworth Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -998,10 +972,10 @@
               <p class="card-label">Lulworth Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-manchester-jumper.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/manchester-jumper-1.jpg"
                   alt="Manchester Jumper — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1009,10 +983,10 @@
               <p class="card-label">Manchester Jumper</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-map-of-kintyre.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/map-of-kintyre-1.jpg"
                   alt="Map of Kintyre — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1020,10 +994,10 @@
               <p class="card-label">Map of Kintyre</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-mcewan-hall-edinburgh.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/mcewan-hall-edinburgh-1.jpg"
                   alt="McEwan Hall, Edinburgh — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1031,10 +1005,10 @@
               <p class="card-label">McEwan Hall, Edinburgh</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-mersey-dazzle-ferry.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/mersey-dazzle-ferry-1.jpg"
                   alt="Mersey Dazzle Ferry — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1042,10 +1016,10 @@
               <p class="card-label">Mersey Dazzle Ferry</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-mg-abingdon-a-block.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/mg-abingdon-a-block-1.jpg"
                   alt="MG Abingdon A Block — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1053,10 +1027,10 @@
               <p class="card-label">MG Abingdon A Block</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-montreat-gate-north-carolina.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/montreat-gate-north-carolina-1.jpg"
                   alt="Montreat Gate, North Carolina — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1064,10 +1038,10 @@
               <p class="card-label">Montreat Gate, North Carolina</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-museum-schokland-kerk.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/museum-schokland-kerk-1.jpg"
                   alt="Museum Schokland Kerk — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1075,10 +1049,10 @@
               <p class="card-label">Museum Schokland Kerk</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-national-museum-cardiff.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/national-museum-cardiff-1.jpg"
                   alt="National Museum Cardiff — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1086,10 +1060,10 @@
               <p class="card-label">National Museum Cardiff</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-new-college-edinburgh.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/new-college-edinburgh-1.jpg"
                   alt="New College, Edinburgh — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1097,10 +1071,10 @@
               <p class="card-label">New College, Edinburgh</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-newbury-cloth-hall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/newbury-cloth-hall-1.jpg"
                   alt="Newbury Cloth Hall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1108,10 +1082,10 @@
               <p class="card-label">Newbury Cloth Hall</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-nottingham-castle-ducal-palace.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/nottingham-castle-ducal-palace-1.jpg"
                   alt="Nottingham Castle Ducal Palace — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1119,10 +1093,10 @@
               <p class="card-label">Nottingham Castle Ducal Palace</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-nottingham-castle-gate-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/nottingham-castle-gate-house-1.jpg"
                   alt="Nottingham Castle Gate House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1130,10 +1104,10 @@
               <p class="card-label">Nottingham Castle Gate House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-nottingham-robin-hood.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/nottingham-robin-hood-1.jpg"
                   alt="Nottingham Robin Hood — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1141,10 +1115,10 @@
               <p class="card-label">Nottingham Robin Hood</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-old-college-edinburgh.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/old-college-edinburgh-1.jpg"
                   alt="Old College, Edinburgh — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1152,10 +1126,10 @@
               <p class="card-label">Old College, Edinburgh</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-old-royal-naval-college.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/old-royal-naval-college-1.jpg"
                   alt="Old Royal Naval College — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1163,10 +1137,10 @@
               <p class="card-label">Old Royal Naval College</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-orca-in-fair-isle-jumper.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/orca-in-fair-isle-jumper-1.jpg"
                   alt="Orca in Fair Isle Jumper — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1174,10 +1148,10 @@
               <p class="card-label">Orca in Fair Isle Jumper</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-ordsall-hall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/ordsall-hall-1.jpg"
                   alt="Ordsall Hall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1185,10 +1159,10 @@
               <p class="card-label">Ordsall Hall</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-orkney-viking-runic-sweater.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/orkney-viking-runic-sweater-1.jpg"
                   alt="Orkney Viking Runic Sweater — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1196,10 +1170,10 @@
               <p class="card-label">Orkney Viking Runic Sweater</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-otter-in-fair-isle-jumper.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/otter-in-fair-isle-jumper-1.jpg"
                   alt="Otter in Fair Isle Jumper — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1218,10 +1192,10 @@
               <p class="card-label">Oxford Botanic Garden</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-oxford-christ-church-tom-tower.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/oxford-christ-church-tom-tower-1.jpg"
                   alt="Oxford Christ Church Tom Tower — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1229,10 +1203,10 @@
               <p class="card-label">Oxford Christ Church Tom Tower</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-oxford-dodo.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/oxford-dodo-1.jpg"
                   alt="Oxford Dodo — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1240,10 +1214,10 @@
               <p class="card-label">Oxford Dodo</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-oxford-university-museum-of-natural-history.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/oxford-university-museum-of-natural-history-1.jpg"
                   alt="Oxford University Museum of Natural History — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1253,10 +1227,10 @@
               </p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-paisley-abbey.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/paisley-abbey-1.jpg"
                   alt="Paisley Abbey — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1264,10 +1238,10 @@
               <p class="card-label">Paisley Abbey</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-palace-of-holyroodhouse.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/palace-of-holyroodhouse-1.jpg"
                   alt="Palace of Holyroodhouse — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1275,10 +1249,10 @@
               <p class="card-label">Palace of Holyroodhouse</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-peerie-shop-lerwick.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/peerie-shop-lerwick-1.jpg"
                   alt="Peerie Shop, Lerwick — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1286,10 +1260,10 @@
               <p class="card-label">Peerie Shop, Lerwick</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-perth-art-gallery.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/perth-art-gallery-1.jpg"
                   alt="Perth Art Gallery — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1297,10 +1271,10 @@
               <p class="card-label">Perth Art Gallery</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-perth-museum.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/perth-museum-1.jpg"
                   alt="Perth Museum — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1308,10 +1282,10 @@
               <p class="card-label">Perth Museum</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-pile-of-books.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/pile-of-books-1.jpg"
                   alt="Pile of Books — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1319,10 +1293,10 @@
               <p class="card-label">Pile of Books</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-portsmouth-spinnaker-tower.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/portsmouth-spinnaker-tower-1.jpg"
                   alt="Portsmouth Spinnaker Tower — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1330,10 +1304,10 @@
               <p class="card-label">Portsmouth Spinnaker Tower</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-puffin-in-fair-isle-jumper.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/puffin-in-fair-isle-jumper-1.jpg"
                   alt="Puffin in Fair Isle Jumper — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1341,10 +1315,10 @@
               <p class="card-label">Puffin in Fair Isle Jumper</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-pump-street-chocolate.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/pump-street-chocolate-1.png"
                   alt="Pump Street Chocolate — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1352,10 +1326,10 @@
               <p class="card-label">Pump Street Chocolate</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-raby-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/raby-castle-1.jpg"
                   alt="Raby Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1363,10 +1337,10 @@
               <p class="card-label">Raby Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-raasay-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/raasay-house-1.jpg"
                   alt="Raasay House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1374,10 +1348,10 @@
               <p class="card-label">Raasay House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-radcliffe-camera.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/radcliffe-camera-1.jpg"
                   alt="Radcliffe Camera — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1385,10 +1359,10 @@
               <p class="card-label">Radcliffe Camera</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-reading-abbey.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/reading-abbey-1.jpg"
                   alt="Reading Abbey — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1396,10 +1370,10 @@
               <p class="card-label">Reading Abbey</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-reading-town-hall-and-museum.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/reading-town-hall-and-museum-1.jpg"
                   alt="Reading Town Hall and Museum — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1407,10 +1381,10 @@
               <p class="card-label">Reading Town Hall and Museum</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-richmond-theatre.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/richmond-theatre-1.jpg"
                   alt="Richmond Theatre — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1418,10 +1392,10 @@
               <p class="card-label">Richmond Theatre</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-robin-hoods-bay.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/robin-hoods-bay-1.jpg"
                   alt="Robin Hood's Bay — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1429,10 +1403,10 @@
               <p class="card-label">Robin Hood&rsquo;s Bay</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-rosslyn-chapel.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/rosslyn-chapel-1.jpg"
                   alt="Rosslyn Chapel — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1440,10 +1414,10 @@
               <p class="card-label">Rosslyn Chapel</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-royal-opera-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/royal-opera-house-1.jpg"
                   alt="Royal Opera House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1451,10 +1425,10 @@
               <p class="card-label">Royal Opera House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-royal-pavilion-brighton.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/royal-pavilion-brighton-1.jpg"
                   alt="Royal Pavilion, Brighton — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1462,10 +1436,10 @@
               <p class="card-label">Royal Pavilion, Brighton</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-salford-museum-and-art-gallery.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/salford-museum-and-art-gallery-1.jpg"
                   alt="Salford Museum and Art Gallery — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1473,10 +1447,10 @@
               <p class="card-label">Salford Museum and Art Gallery</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-scottish-fire-engine.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/scottish-fire-engine-1.jpg"
                   alt="Scottish Fire Engine — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1484,10 +1458,10 @@
               <p class="card-label">Scottish Fire Engine</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-shaw-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/shaw-house-1.jpg"
                   alt="Shaw House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1495,10 +1469,10 @@
               <p class="card-label">Shaw House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-shaw-house-teapot.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/shaw-house-teapot-1.jpg"
                   alt="Shaw House Teapot — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1506,10 +1480,10 @@
               <p class="card-label">Shaw House Teapot</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-sheldonian-theatre.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/sheldonian-theatre-1.jpg"
                   alt="Sheldonian Theatre — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1517,10 +1491,10 @@
               <p class="card-label">Sheldonian Theatre</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-shetland-crofthouse.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/shetland-crofthouse-1.jpg"
                   alt="Shetland Crofthouse — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1528,10 +1502,10 @@
               <p class="card-label">Shetland Crofthouse</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-shetland-pony-in-fair-isle-jumper.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/shetland-pony-in-fair-isle-jumper-1.jpg"
                   alt="Shetland Pony in Fair Isle Jumper — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1539,10 +1513,10 @@
               <p class="card-label">Shetland Pony in Fair Isle Jumper</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-shrine-of-our-lady-of-walsingham.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/shrine-of-our-lady-of-walsingham-1.jpg"
                   alt="Shrine of Our Lady of Walsingham — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1550,10 +1524,10 @@
               <p class="card-label">Shrine of Our Lady of Walsingham</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-skara-brae-orkney.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/skara-brae-orkney-1.jpg"
                   alt="Skara Brae, Orkney — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1561,10 +1535,10 @@
               <p class="card-label">Skara Brae, Orkney</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-skaill-house.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/skaill-house-1.jpg"
                   alt="Skaill House — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1572,10 +1546,10 @@
               <p class="card-label">Skaill House</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-skyfall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/skyfall-1.jpg"
                   alt="Skyfall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1583,10 +1557,10 @@
               <p class="card-label">Skyfall</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-south-parade-pier-portsmouth.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/south-parade-pier-portsmouth-1.jpg"
                   alt="South Parade Pier, Portsmouth — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1594,10 +1568,10 @@
               <p class="card-label">South Parade Pier, Portsmouth</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-albans-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-albans-cathedral-1.jpg"
                   alt="St Albans Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1605,10 +1579,10 @@
               <p class="card-label">St Albans Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-st-albans-cross.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-albans-cross-1.jpg"
                   alt="St Albans Cross — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1616,10 +1590,10 @@
               <p class="card-label">St Albans Cross</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-davids-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-davids-cathedral-1.jpg"
                   alt="St Davids Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1627,10 +1601,10 @@
               <p class="card-label">St Davids Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-giles-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-giles-cathedral-1.jpg"
                   alt="St Giles' Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1638,10 +1612,10 @@
               <p class="card-label">St Giles&rsquo; Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-st-johns-cross.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-johns-cross-1.jpg"
                   alt="St John's Cross — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1649,10 +1623,10 @@
               <p class="card-label">St John&rsquo;s Cross</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-laurence-church-ludlow.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-laurence-church-ludlow-1.jpg"
                   alt="St Laurence Church, Ludlow — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1660,10 +1634,10 @@
               <p class="card-label">St Laurence Church, Ludlow</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-machars-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-machars-cathedral-1.jpg"
                   alt="St Machar's Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1671,10 +1645,10 @@
               <p class="card-label">St Machar&rsquo;s Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-magnus-cathedral-orkney.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-magnus-cathedral-orkney-1.jpg"
                   alt="St Magnus Cathedral, Orkney — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1682,10 +1656,10 @@
               <p class="card-label">St Magnus Cathedral, Orkney</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-mary-redcliffe.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-mary-redcliffe-1.jpg"
                   alt="St Mary Redcliffe — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1693,10 +1667,10 @@
               <p class="card-label">St Mary Redcliffe</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-marys-church-hitchin.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-marys-church-hitchin-1.jpg"
                   alt="St Mary's Church, Hitchin — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1704,10 +1678,10 @@
               <p class="card-label">St Mary&rsquo;s Church, Hitchin</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-marys-church-west-derby.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-marys-church-west-derby-1.jpg"
                   alt="St Mary's Church, West Derby — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1715,10 +1689,10 @@
               <p class="card-label">St Mary&rsquo;s Church, West Derby</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-st-pauls-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/st-pauls-cathedral-1.jpg"
                   alt="St Paul's Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1726,10 +1700,10 @@
               <p class="card-label">St Paul&rsquo;s Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-steel-drop-rollercoaster.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/steel-drop-rollercoaster-1.jpg"
                   alt="Steel Drop Rollercoaster — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1737,10 +1711,10 @@
               <p class="card-label">Steel Drop Rollercoaster</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-stonehenge.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/stonehenge.jpg"
+                  src="../assets/images/products/stonehenge-1.jpg"
                   alt="Stonehenge — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1748,10 +1722,10 @@
               <p class="card-label">Stonehenge</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-tamworth-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/tamworth-castle-1.jpg"
                   alt="Tamworth Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1759,10 +1733,10 @@
               <p class="card-label">Tamworth Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-tewkesbury-abbey.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/tewkesbury-abbey-1.jpg"
                   alt="Tewkesbury Abbey — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1770,10 +1744,10 @@
               <p class="card-label">Tewkesbury Abbey</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-teviot-row-house-edinburgh.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/teviot-row-house-edinburgh-1.jpg"
                   alt="Teviot Row House, Edinburgh — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1781,10 +1755,10 @@
               <p class="card-label">Teviot Row House, Edinburgh</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-the-national-archives.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/the-national-archives-1.jpg"
                   alt="The National Archives — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1792,10 +1766,10 @@
               <p class="card-label">The National Archives</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-titchfield-market-hall.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/titchfield-market-hall-1.jpg"
                   alt="Titchfield Market Hall — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1806,7 +1780,7 @@
             <a class="product-card" href="../products/product-tower-bridge.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/tower-bridge-lifestyle.jpg"
+                  src="../assets/images/products/tower-bridge-1.jpg"
                   alt="Tower Bridge — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1814,10 +1788,10 @@
               <p class="card-label">Tower Bridge</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-traditional-hooded-orkney-chair.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/traditional-hooded-orkney-chair-1.jpg"
                   alt="Traditional Hooded Orkney Chair — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1825,10 +1799,10 @@
               <p class="card-label">Traditional Hooded Orkney Chair</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-traditional-orkney-chair.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/traditional-orkney-chair-1.jpg"
                   alt="Traditional Orkney Chair — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1836,10 +1810,10 @@
               <p class="card-label">Traditional Orkney Chair</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="museums" href="../products/product-university-of-st-andrews.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/university-of-st-andrews-1.jpg"
                   alt="University of St Andrews — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1847,10 +1821,10 @@
               <p class="card-label">University of St Andrews</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-victorias-vintage-tea-rooms-teapot.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/victorias-vintage-tea-rooms-teapot-1.jpg"
                   alt="Victoria's Vintage Tea Rooms Teapot — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1860,10 +1834,10 @@
               </p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-wells-cathedral.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/wells-cathedral-1.jpg"
                   alt="Wells Cathedral — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1871,10 +1845,10 @@
               <p class="card-label">Wells Cathedral</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="castles" href="../products/product-windsor-castle.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/windsor.jpg"
+                  src="../assets/images/products/windsor-castle-1.jpg"
                   alt="Windsor Castle — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1882,10 +1856,10 @@
               <p class="card-label">Windsor Castle</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="animals" href="../products/product-wooden-rollercoaster.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/wooden-rollercoaster-1.jpg"
                   alt="Wooden Rollercoaster — handmade ceramic decoration"
                   loading="lazy"
                 />
@@ -1893,10 +1867,10 @@
               <p class="card-label">Wooden Rollercoaster</p></a
             >
 
-            <a class="product-card" href="#"
+            <a class="product-card" data-subcategory="cathedrals" href="../products/product-york-minster.html"
               ><div class="card-image">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
+                  src="../assets/images/products/york-minster-1.jpg"
                   alt="York Minster — handmade ceramic decoration"
                   loading="lazy"
                 />
