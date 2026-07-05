@@ -14,6 +14,8 @@
     />
     <link rel="icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
       .reveal,
       .reveal-stagger,
@@ -66,7 +68,7 @@
               Each piece is individually shaped, painted and glazed in our
               Berkshire studio, with fine brushwork detail. Finished with
               hand-threaded ceramic beads and a ribbon for hanging.
-            </p>
+             You can buy these directly from their website <a href="https://www.libertylondon.com/" target="_blank" rel="noopener noreferrer" class="inline-link">here</a>.</p>
           </div>
         </div>
       </div>
@@ -78,15 +80,16 @@
         <div class="product-stockist-layout reveal">
           <div class="stockist-info">
             <h2>Where to find it</h2>
-            <p>Black ceramic hanging decoration of the Liberty building, London. You can buy these directly from their website <a href="https://www.libertylondon.com/" target="_blank" rel="noopener noreferrer">here</a>.</p>
-            <p class="venue-address">the Liberty Department Store, Regent Street, London, W1B 5AH. It’s usually sold during the Christmas season</p>
+            <div class="venue-location">
+              <svg class="location-icon" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0C3.589 0 0 3.589 0 8c0 6 8 12 8 12s8-6 8-12C16 3.589 12.411 0 8 0z" fill="#1F3D73" opacity="0.7"/>
+                <circle cx="8" cy="8" r="3" fill="#fff"/>
+              </svg>
+              <p class="venue-address">The Liberty Department Store, Regent Street, London, W1B 5AH. It’s usually sold during the Christmas season</p>
+            </div>
           </div>
-          <div class="venue-map">
-            <iframe
-              title="Map showing venue location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.147922,51.505810499999995,-0.13192199999999998,51.5218105&layer=mapnik&marker=51.5138105,-0.139922"
-              loading="lazy"
-            ></iframe>
+          <div class="venue-map" id="product-map" data-lat="51.5138105" data-lng="-0.139922">
+            <div class="map-click-overlay"><span>Click to interact with map</span></div>
           </div>
         </div>
       </div>

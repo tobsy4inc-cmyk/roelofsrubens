@@ -664,16 +664,6 @@ section.hero {
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.carousel-card:hover .card-image img {
-  transform: scale(1.06);
-}
-
-.carousel-card:hover .card-image {
-  transform: translateY(-4px);
-  box-shadow:
-    0 8px 24px rgba(31, 61, 115, 0.08),
-    0 20px 48px rgba(31, 61, 115, 0.06);
-}
 
 .card-label {
   text-align: center;
@@ -697,9 +687,6 @@ section.hero {
   transition: width 0.35s ease;
 }
 
-.carousel-card:hover .card-label::after {
-  width: 56px;
-}
 
 /* ============================================
    SCALLOP DIVIDERS (CSS pseudo-element approach)
@@ -868,16 +855,6 @@ section.hero {
   box-shadow:
     0 1px 3px rgba(31, 61, 115, 0.06),
     0 4px 16px rgba(31, 61, 115, 0.04);
-  transition:
-    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.feature-block:hover {
-  box-shadow:
-    0 8px 24px rgba(31, 61, 115, 0.08),
-    0 20px 48px rgba(31, 61, 115, 0.06);
-  transform: translateY(-4px);
 }
 
 .feature-block--reversed {
@@ -945,9 +922,6 @@ section.hero {
   border-radius: inherit;
 }
 
-.feature-block:hover .feature-image img {
-  transform: scale(1.03);
-}
 
 .feature-text {
   flex: 0 0 50%;
@@ -1070,26 +1044,7 @@ section.hero {
   border-radius: var(--radius-img);
   background: linear-gradient(145deg, var(--mist-blue) 0%, #dce8f0 100%);
   box-shadow: 0 1px 3px rgba(31, 61, 115, 0.06);
-  transition:
-    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
-  cursor: pointer;
-}
-
-.insta-thumb:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 8px 24px rgba(31, 61, 115, 0.08),
-    0 16px 40px rgba(31, 61, 115, 0.06);
-}
-
-.insta-thumb img {
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.insta-thumb:hover img {
-  transform: scale(1.06);
 }
 
 .insta-thumb img {
@@ -1423,16 +1378,6 @@ section.hero {
   box-shadow:
     0 1px 3px rgba(31, 61, 115, 0.06),
     0 4px 16px rgba(31, 61, 115, 0.04);
-  transition:
-    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.process-step:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 8px 24px rgba(31, 61, 115, 0.08),
-    0 20px 48px rgba(31, 61, 115, 0.06);
 }
 
 .process-image {
@@ -1444,11 +1389,6 @@ section.hero {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.process-step:hover .process-image img {
-  transform: scale(1.05);
 }
 
 .process-step h3 {
@@ -1809,9 +1749,6 @@ section.hero {
   transition: opacity var(--transition);
 }
 
-.product-back:hover {
-  opacity: 0.7;
-}
 
 .product-back svg {
   width: 16px;
@@ -1971,9 +1908,6 @@ section.hero {
   transition: opacity var(--transition);
 }
 
-.catalogue-back:hover {
-  opacity: 0.7;
-}
 
 .catalogue-back svg {
   width: 16px;
@@ -2172,25 +2106,58 @@ section.hero {
   line-height: 1.7;
 }
 
+.venue-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.location-icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
 .venue-address {
   font-size: 0.9rem;
   color: var(--body-text);
   opacity: 0.8;
-  margin-top: 12px;
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+.inline-link {
+  color: var(--ink-blue);
+  text-decoration: underline;
 }
 
 .venue-map {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(31, 61, 115, 0.12);
-  aspect-ratio: 4 / 3;
+  height: 360px;
+  position: relative;
 }
 
-.venue-map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
+.map-click-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+
+.map-click-overlay span {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink-blue);
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -2200,7 +2167,7 @@ section.hero {
   }
 
   .venue-map {
-    aspect-ratio: 16 / 9;
+    height: 240px;
   }
 }
 
@@ -2398,12 +2365,6 @@ section.hero {
     box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.stockist-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 8px 24px rgba(31, 61, 115, 0.08),
-    0 20px 48px rgba(31, 61, 115, 0.06);
-}
 
 .stockist-card h3 {
   margin-bottom: 8px;

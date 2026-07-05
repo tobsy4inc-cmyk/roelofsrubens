@@ -12,6 +12,8 @@
     />
     <link rel="icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
       .reveal,
       .reveal-stagger,
@@ -64,7 +66,7 @@
               piece is individually shaped, painted and glazed in our Berkshire
               studio, with fine brushwork detail. Finished with hand-threaded
               ceramic beads and a ribbon for hanging.
-            </p>
+             You can buy these directly from their website <a href="https://www.ionacraftshop.com/" target="_blank" rel="noopener noreferrer" class="inline-link">here</a>.</p>
           </div>
         </div>
       </div>
@@ -76,15 +78,16 @@
         <div class="product-stockist-layout reveal">
           <div class="stockist-info">
             <h2>Where to find it</h2>
-            <p>Blue ceramic hanging decoration of Iona Abbey. You can buy these directly from their website <a href="https://www.ionacraftshop.com/" target="_blank" rel="noopener noreferrer">here</a>.</p>
-            <p class="venue-address">Iona Craft Shop, Isle of Iona PA76 6SJ</p>
+            <div class="venue-location">
+              <svg class="location-icon" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0C3.589 0 0 3.589 0 8c0 6 8 12 8 12s8-6 8-12C16 3.589 12.411 0 8 0z" fill="#1F3D73" opacity="0.7"/>
+                <circle cx="8" cy="8" r="3" fill="#fff"/>
+              </svg>
+              <p class="venue-address">Iona Craft Shop, Isle of Iona PA76 6SJ</p>
+            </div>
           </div>
-          <div class="venue-map">
-            <iframe
-              title="Map showing venue location"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-6.4009902,56.3232554,-6.3849902,56.339255400000006&layer=mapnik&marker=56.3312554,-6.3929902"
-              loading="lazy"
-            ></iframe>
+          <div class="venue-map" id="product-map" data-lat="56.3312554" data-lng="-6.3929902">
+            <div class="map-click-overlay"><span>Click to interact with map</span></div>
           </div>
         </div>
       </div>

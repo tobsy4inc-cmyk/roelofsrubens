@@ -169,6 +169,50 @@
     });
   }
 
+  // --- Product Venue Map (Leaflet) ---
+  const venueMapEl = document.getElementById("product-map");
+  if (venueMapEl && typeof L !== "undefined") {
+    const lat = parseFloat(venueMapEl.dataset.lat);
+    const lng = parseFloat(venueMapEl.dataset.lng);
+
+    const venueMap = L.map("product-map", {
+      center: [lat, lng],
+      zoom: 15,
+      dragging: false,
+      scrollWheelZoom: false,
+      touchZoom: false,
+      doubleClickZoom: false,
+      zoomControl: true,
+    });
+
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: "abcd",
+      maxZoom: 19,
+    }).addTo(venueMap);
+
+    const venuePinIcon = L.divIcon({
+      className: "stockist-pin",
+      html: '<svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0C6.268 0 0 6.268 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.268 21.732 0 14 0z" fill="#1F3D73"/><circle cx="14" cy="13" r="5" fill="#fff"/></svg>',
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
+    });
+    L.marker([lat, lng], { icon: venuePinIcon }).addTo(venueMap);
+
+    setTimeout(function () { venueMap.invalidateSize(); }, 100);
+
+    const overlay = venueMapEl.querySelector(".map-click-overlay");
+    if (overlay) {
+      overlay.addEventListener("click", function () {
+        venueMap.dragging.enable();
+        venueMap.scrollWheelZoom.enable();
+        venueMap.touchZoom.enable();
+        venueMap.doubleClickZoom.enable();
+        overlay.remove();
+      });
+    }
+  }
+
   // --- Stockists Map (Leaflet) ---
   const mapEl = document.getElementById("stockists-map");
   if (mapEl && typeof L !== "undefined") {
