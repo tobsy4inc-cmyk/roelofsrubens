@@ -525,16 +525,6 @@ section.hero {
   box-shadow:
     0 1px 3px rgba(31, 61, 115, 0.06),
     0 4px 16px rgba(31, 61, 115, 0.04);
-  transition:
-    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.path-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 8px 24px rgba(31, 61, 115, 0.08),
-    0 20px 48px rgba(31, 61, 115, 0.06);
 }
 
 .path-card h3 {
@@ -628,7 +618,7 @@ section.hero {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   flex: 1;
-  padding: 8px 0;
+  padding: 20px 0;
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -664,6 +654,21 @@ section.hero {
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+a.carousel-card {
+  transition: filter 0.3s ease;
+}
+
+a.carousel-card:hover {
+  filter: drop-shadow(0 6px 18px rgba(31, 61, 115, 0.25));
+}
+
+a.carousel-card:hover .card-image img {
+  transform: scale(1.06);
+}
+
+a.carousel-card:hover .card-label::after {
+  width: 56px;
+}
 
 .card-label {
   text-align: center;
@@ -2168,6 +2173,30 @@ section.hero {
 
   .venue-map {
     height: 240px;
+  }
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-supplement {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contact-note {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  opacity: 0.7;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .contact-supplement {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
