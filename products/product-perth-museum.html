@@ -12,6 +12,8 @@
     />
     <link rel="icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
       .reveal,
       .reveal-stagger,
@@ -27,25 +29,6 @@
     <div id="site-header"></div>
 
 
-    <!-- ====== BACK LINK ====== -->
-    <div class="product-back-bar">
-      <div class="container">
-        <a href="../bespoke-museums.html" class="product-back">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-          Back to Museums &amp; Buildings
-        </a>
-      </div>
-    </div>
-
     <!-- ====== PRODUCT DETAIL ====== -->
     <section class="product-detail">
       <div class="container">
@@ -53,7 +36,7 @@
           <div class="product-gallery reveal">
             <div class="product-image-main">
               <img
-                src="../assets/images/products/placeholder.jpg"
+                src="../assets/images/products/perth-museum-1.jpg"
                 alt="Perth Museum — handmade ceramic hanging decoration by Roelofs &amp; Rubens"
                 id="main-product-image"
               />
@@ -61,9 +44,16 @@
             <div class="product-thumbnails">
               <button class="product-thumbnail active" type="button">
                 <img
-                  src="../assets/images/products/placeholder.jpg"
-                  data-full="assets/images/products/placeholder.jpg"
-                  alt="perth-museum"
+                  src="../assets/images/products/perth-museum-1.jpg"
+                  data-full="../assets/images/products/perth-museum-1.jpg"
+                  alt="perth-museum view 1"
+                />
+              </button>
+              <button class="product-thumbnail" type="button">
+                <img
+                  src="../assets/images/products/perth-museum-2.jpg"
+                  data-full="../assets/images/products/perth-museum-2.jpg"
+                  alt="perth-museum view 2"
                 />
               </button>
             </div>
@@ -76,7 +66,7 @@
               piece is individually shaped, painted and glazed in our Berkshire
               studio, with fine brushwork detail. Finished with hand-threaded
               ceramic beads and a ribbon for hanging.
-            </p>
+             You can buy these directly from their website <a href="https://www.culturepk.org.uk/" target="_blank" rel="noopener noreferrer" class="inline-link">here</a>.</p>
           </div>
         </div>
       </div>
@@ -85,19 +75,19 @@
     <!-- ====== WHERE TO FIND IT ====== -->
     <section class="product-stockist about-section--mist">
       <div class="container">
-        <div class="feature-block reveal">
-          <div class="feature-text">
+        <div class="product-stockist-layout reveal">
+          <div class="stockist-info">
             <h2>Where to find it</h2>
-            <p>
-              This bespoke decoration is available from its partner venue.
-              Please contact us for current availability and purchasing
-              information.
-            </p>
-            <div class="location-details">
-              <p><strong>Enquiries</strong><br />info@roelofsrubens.co.uk</p>
-              <p><strong>Phone</strong><br />+44 (0)1488 668154</p>
+            <div class="venue-location">
+              <svg class="location-icon" width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0C3.589 0 0 3.589 0 8c0 6 8 12 8 12s8-6 8-12C16 3.589 12.411 0 8 0z" fill="#1F3D73" opacity="0.7"/>
+                <circle cx="8" cy="8" r="3" fill="#fff"/>
+              </svg>
+              <p class="venue-address">Culture Perth & Kinross, 78 George St, Perth PH1 5LB (Art Gallery)</p>
             </div>
-            <a href="../collections.html#stockists" class="btn btn-primary">Find a Retailer</a>
+          </div>
+          <div class="venue-map" id="product-map" data-lat="56.3981582" data-lng="-3.4278289">
+            <div class="map-click-overlay"><span>Click to interact with map</span></div>
           </div>
         </div>
       </div>
@@ -108,7 +98,7 @@
       <div class="container">
         <ol class="breadcrumb-nav" aria-label="Breadcrumb">
           <li><a href="../bespoke.html">Bespoke</a></li>
-          <li><a href="../bespoke-museums.html">Museums &amp; Buildings</a></li>
+          <li><a href="../bespoke-pages/bespoke-museums.html">Museums &amp; Buildings</a></li>
           <li aria-current="page">Perth Museum</li>
         </ol>
       </div>

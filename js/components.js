@@ -37,7 +37,8 @@
     navLink("collections.html", "Collections") +
     navLink("bespoke.html", "Bespoke") +
     navLink("about.html", "About") +
-    navLink("trade.html", "Trade");
+    navLink("trade.html", "Trade") +
+    navLink("contact.html", "Contact us");
 
   // --- Header ---
   var headerHTML =

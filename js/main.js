@@ -101,6 +101,32 @@
   const countEl = document.getElementById("catalogue-count");
 
   if (filterSelect && countEl) {
+    const catalogueH1 = document.querySelector(".catalogue-heading h1");
+    const catalogueIntro = document.querySelector(".catalogue-heading .catalogue-intro");
+
+    const categoryContent = {
+      all: {
+        title: "All Bespoke Decorations",
+        intro: "Browse our complete catalogue of bespoke ceramic decorations, created for venues across the UK and beyond. Each piece is handmade in our Berkshire studio and available exclusively through its retailer."
+      },
+      cathedrals: {
+        title: "Cathedrals &amp; Churches",
+        intro: "Handmade ceramic decorations created exclusively for cathedrals, churches, abbeys and chapels across the UK and beyond. Each piece captures the architecture and character of its venue."
+      },
+      castles: {
+        title: "Castles &amp; Landmarks",
+        intro: "Handmade ceramic decorations capturing iconic castles, palaces, bridges and landmarks. Each piece is individually shaped and painted in our Berkshire studio, available exclusively through its venue."
+      },
+      museums: {
+        title: "Museums &amp; Buildings",
+        intro: "Handmade ceramic decorations created for museums, galleries, historic houses and cultural venues. Each design is crafted to capture the character of its building."
+      },
+      animals: {
+        title: "Animals &amp; Objects",
+        intro: "From Highland cows to rollercoasters, these handmade ceramic decorations capture the character and charm of animals, objects and curiosities found at venues across the UK."
+      }
+    };
+
     filterSelect.addEventListener("change", function () {
       const value = this.value;
       const cards = document.querySelectorAll(".product-card");
@@ -118,6 +144,11 @@
 
       countEl.textContent =
         visible + " decoration" + (visible !== 1 ? "s" : "");
+
+      if (catalogueH1 && catalogueIntro && categoryContent[value]) {
+        catalogueH1.innerHTML = categoryContent[value].title;
+        catalogueIntro.textContent = categoryContent[value].intro;
+      }
     });
   }
 
@@ -136,6 +167,50 @@
         mainImage.alt = thumb.querySelector("img").alt;
       });
     });
+  }
+
+  // --- Product Venue Map (Leaflet) ---
+  const venueMapEl = document.getElementById("product-map");
+  if (venueMapEl && typeof L !== "undefined") {
+    const lat = parseFloat(venueMapEl.dataset.lat);
+    const lng = parseFloat(venueMapEl.dataset.lng);
+
+    const venueMap = L.map("product-map", {
+      center: [lat, lng],
+      zoom: 15,
+      dragging: false,
+      scrollWheelZoom: false,
+      touchZoom: false,
+      doubleClickZoom: false,
+      zoomControl: true,
+    });
+
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: "abcd",
+      maxZoom: 19,
+    }).addTo(venueMap);
+
+    const venuePinIcon = L.divIcon({
+      className: "stockist-pin",
+      html: '<svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0C6.268 0 0 6.268 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.268 21.732 0 14 0z" fill="#1F3D73"/><circle cx="14" cy="13" r="5" fill="#fff"/></svg>',
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
+    });
+    L.marker([lat, lng], { icon: venuePinIcon }).addTo(venueMap);
+
+    setTimeout(function () { venueMap.invalidateSize(); }, 100);
+
+    const overlay = venueMapEl.querySelector(".map-click-overlay");
+    if (overlay) {
+      overlay.addEventListener("click", function () {
+        venueMap.dragging.enable();
+        venueMap.scrollWheelZoom.enable();
+        venueMap.touchZoom.enable();
+        venueMap.doubleClickZoom.enable();
+        overlay.remove();
+      });
+    }
   }
 
   // --- Stockists Map (Leaflet) ---
