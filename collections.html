@@ -10,11 +10,6 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      crossorigin=""
-    />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="css/styles.css" />
     <style>
@@ -40,9 +35,13 @@
           Explore our year-round ceramic decorations, from flowers and animals
           to hearts, vegetables and seaside favourites.
         </p>
-        <p class="reveal">
+        <p class="page-hero-intro reveal">
           These collections are available to shop through our
-          <a href="https://www.etsy.com/" target="_blank" rel="noopener"
+          <a
+            href="https://www.etsy.com/"
+            target="_blank"
+            rel="noopener"
+            class="inline-link"
             >Etsy store</a
           >.
         </p>
@@ -146,19 +145,19 @@
           </a>
 
           <a
-            href="https://www.etsy.com/uk/shop/roelofsrubens?ref=shop_sugg_market&section_id=29598506"
+            href="https://www.etsy.com/uk/shop/roelofsrubens?ref=shop_sugg_market"
             class="category-card"
             target="_blank"
             rel="noopener"
           >
             <div class="card-image">
               <img
-                src="assets/images/placeholder-easter.jpg"
-                alt="Easter collection — handmade ceramic Easter decorations"
+                src="assets/images/placeholder-all.jpg"
+                alt="All collections — every handmade ceramic decoration"
                 loading="lazy"
               />
             </div>
-            <h3>Easter</h3>
+            <h3>All</h3>
           </a>
         </div>
       </div>
@@ -169,118 +168,9 @@
       data-body="We also create bespoke ceramic decorations for shops, venues, museums, cathedrals and other special places. If you have a commission in mind, we would love to hear from you."
       data-btn-text="Ask About a Commission"></div>
 
-    <!-- ====== STOCKISTS MAP ====== -->
-    <section id="stockists" class="stockists-map-section">
-      <div class="container">
-        <h2 class="reveal">Where to find our products</h2>
-        <div id="stockists-map"></div>
-      </div>
-    </section>
-
-    <!-- ====== ALL STOCKISTS ====== -->
-    <section class="featured-stockists">
-      <div class="container">
-        <h2 class="reveal">All retailers</h2>
-        <div class="stockists-map-search" style="margin: 0 auto 32px">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input
-            type="text"
-            id="stockist-search"
-            placeholder="Search by name or location"
-            aria-label="Search retailers"
-          />
-        </div>
-        <div class="stockist-grid reveal" id="stockist-list">
-          <div class="stockist-card">
-            <h3>Ailsa Craig Gifts</h3>
-            <p>Maidens, South Ayrshire</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Farm Ness</h3>
-            <p>Inverness</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Giulianotti</h3>
-            <p>Stonehaven</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Grasmere Trading Co.</h3>
-            <p>Grasmere, Ambleside</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Helensburgh Cultural Centre</h3>
-            <p>Helensburgh, Argyll</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Ingram Cafe</h3>
-            <p>Alnwick, Northumberland</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Islander UK / Baa Baa Sheep</h3>
-            <p>Edinburgh</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Loch Lomond Trading Co.</h3>
-            <p>Luss, Loch Lomond, Argyll</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Ness Gifts</h3>
-            <p>Dores, Inverness</p>
-          </div>
-          <div class="stockist-card">
-            <h3>St Giles' Cathedral Shop</h3>
-            <p>Edinburgh</p>
-          </div>
-          <div class="stockist-card">
-            <h3>St Laurence Church</h3>
-            <p>Ludlow, Shropshire</p>
-          </div>
-          <div class="stockist-card">
-            <h3>St Machar's Cathedral</h3>
-            <p>Aberdeen</p>
-          </div>
-          <div class="stockist-card">
-            <h3>The Found Gallery</h3>
-            <p>Dunbar</p>
-          </div>
-          <div class="stockist-card">
-            <h3>The Old School Shop</h3>
-            <p>Aviemore</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Timeless Art and Antiques</h3>
-            <p>Dunkeld</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Welford Park</h3>
-            <p>Welford, Newbury, Berkshire</p>
-          </div>
-          <div class="stockist-card">
-            <h3>Westmorland Limited</h3>
-            <p>Douglas, Lanark</p>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- ====== FOOTER ====== -->
     <div id="site-footer"></div>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      crossorigin=""
-    ></script>
     <script
       src="https://mcp.figma.com/mcp/html-to-design/capture.js"
       async

@@ -1,0 +1,122 @@
+<!--
+  Archived from collections.html on 2026-08-02.
+  Removed at user's request ("Where to find our products" + "All retailers"
+  sections) with the intention of restoring around 2027-02 (~6 months out).
+
+  To restore:
+  1. Paste this block back into collections.html in place of the
+     bespoke-teaser -> footer gap (it originally sat directly after the
+     bespoke-teaser div and before the footer).
+  2. Re-add the Leaflet CSS in <head>:
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  3. Re-add the Leaflet JS before js/main.js at the bottom of <body>:
+       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  (js/main.js already guards its stockists-map init on the element's
+  presence, so no JS changes are needed either way.)
+-->
+
+<!-- ====== STOCKISTS MAP ====== -->
+<section id="stockists" class="stockists-map-section">
+  <div class="container">
+    <h2 class="reveal">Where to find our products</h2>
+    <div id="stockists-map"></div>
+  </div>
+</section>
+
+<!-- ====== ALL STOCKISTS ====== -->
+<section class="featured-stockists">
+  <div class="container">
+    <h2 class="reveal">All retailers</h2>
+    <div class="stockists-map-search" style="margin: 0 auto 32px">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input
+        type="text"
+        id="stockist-search"
+        placeholder="Search by name or location"
+        aria-label="Search retailers"
+      />
+    </div>
+    <div class="stockist-grid reveal" id="stockist-list">
+      <div class="stockist-card">
+        <h3>Ailsa Craig Gifts</h3>
+        <p>Maidens, South Ayrshire</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Farm Ness</h3>
+        <p>Inverness</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Giulianotti</h3>
+        <p>Stonehaven</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Grasmere Trading Co.</h3>
+        <p>Grasmere, Ambleside</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Helensburgh Cultural Centre</h3>
+        <p>Helensburgh, Argyll</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Ingram Cafe</h3>
+        <p>Alnwick, Northumberland</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Islander UK / Baa Baa Sheep</h3>
+        <p>Edinburgh</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Loch Lomond Trading Co.</h3>
+        <p>Luss, Loch Lomond, Argyll</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Ness Gifts</h3>
+        <p>Dores, Inverness</p>
+      </div>
+      <div class="stockist-card">
+        <h3>St Giles' Cathedral Shop</h3>
+        <p>Edinburgh</p>
+      </div>
+      <div class="stockist-card">
+        <h3>St Laurence Church</h3>
+        <p>Ludlow, Shropshire</p>
+      </div>
+      <div class="stockist-card">
+        <h3>St Machar's Cathedral</h3>
+        <p>Aberdeen</p>
+      </div>
+      <div class="stockist-card">
+        <h3>The Found Gallery</h3>
+        <p>Dunbar</p>
+      </div>
+      <div class="stockist-card">
+        <h3>The Old School Shop</h3>
+        <p>Aviemore</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Timeless Art and Antiques</h3>
+        <p>Dunkeld</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Welford Park</h3>
+        <p>Welford, Newbury, Berkshire</p>
+      </div>
+      <div class="stockist-card">
+        <h3>Westmorland Limited</h3>
+        <p>Douglas, Lanark</p>
+      </div>
+    </div>
+  </div>
+</section>
