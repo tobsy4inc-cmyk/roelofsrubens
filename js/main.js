@@ -113,13 +113,9 @@
         title: "Cathedrals &amp; Churches",
         intro: "Handmade ceramic decorations created exclusively for cathedrals, churches, abbeys and chapels across the UK and beyond. Each piece captures the architecture and character of its venue."
       },
-      castles: {
-        title: "Castles &amp; Landmarks",
-        intro: "Handmade ceramic decorations capturing iconic castles, palaces, bridges and landmarks. Each piece is individually shaped and painted in our Berkshire studio, available exclusively through its venue."
-      },
-      museums: {
-        title: "Museums &amp; Buildings",
-        intro: "Handmade ceramic decorations created for museums, galleries, historic houses and cultural venues. Each design is crafted to capture the character of its building."
+      "castles-museums": {
+        title: "Castles, Museums &amp; Buildings",
+        intro: "Handmade ceramic decorations capturing iconic castles, palaces, bridges, landmarks, museums and historic buildings across the UK. Each piece is individually shaped and painted in our Berkshire studio, available exclusively through its venue."
       },
       animals: {
         title: "Animals &amp; Objects",

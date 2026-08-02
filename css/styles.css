@@ -1234,6 +1234,10 @@ a.carousel-card:hover .card-label::after {
   margin: 0 auto;
 }
 
+.page-hero-intro + .page-hero-intro {
+  margin-top: 16px;
+}
+
 /* ============================================
    ABOUT PAGE — editorial layout
    ============================================ */
