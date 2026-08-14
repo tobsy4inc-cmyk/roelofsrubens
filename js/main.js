@@ -45,6 +45,12 @@
       return card.offsetWidth + 24; // card width + gap
     };
 
+    const updateCarouselButtons = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      prevBtn.disabled = track.scrollLeft <= 0;
+      nextBtn.disabled = track.scrollLeft >= maxScroll - 1;
+    };
+
     prevBtn.addEventListener("click", () => {
       track.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
     });
@@ -52,6 +58,10 @@
     nextBtn.addEventListener("click", () => {
       track.scrollBy({ left: scrollAmount(), behavior: "smooth" });
     });
+
+    track.addEventListener("scroll", updateCarouselButtons);
+    window.addEventListener("resize", updateCarouselButtons);
+    updateCarouselButtons();
   }
 
   // --- Mobile Menu (full-screen overlay) ---

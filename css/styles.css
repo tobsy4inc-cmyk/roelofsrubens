@@ -609,6 +609,16 @@ section.hero {
   border-color: var(--ink-blue);
 }
 
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.carousel-btn:disabled:hover {
+  background: var(--white);
+  border-color: var(--soft-line-grey);
+}
+
 .carousel-track {
   display: flex;
   gap: var(--grid-gap);
