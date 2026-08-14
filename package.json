@@ -1,0 +1,16 @@
+{
+  "name": "roelofsrubens",
+  "version": "1.0.0",
+  "description": "Roelofs & Rubens - Handmade Ceramic Decorations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-speed-insights.js"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0"
+  }
+}
