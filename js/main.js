@@ -34,11 +34,13 @@
   });
 
   // --- Carousel ---
-  const track = document.querySelector(".carousel-track");
-  const prevBtn = document.querySelector(".carousel-prev");
-  const nextBtn = document.querySelector(".carousel-next");
+  document.querySelectorAll(".carousel-wrapper").forEach((wrapper) => {
+    const track = wrapper.querySelector(".carousel-track");
+    const prevBtn = wrapper.querySelector(".carousel-prev");
+    const nextBtn = wrapper.querySelector(".carousel-next");
 
-  if (track && prevBtn && nextBtn) {
+    if (!track || !prevBtn || !nextBtn) return;
+
     const scrollAmount = () => {
       const card = track.querySelector(".carousel-card");
       if (!card) return 300;
@@ -62,7 +64,7 @@
     track.addEventListener("scroll", updateCarouselButtons);
     window.addEventListener("resize", updateCarouselButtons);
     updateCarouselButtons();
-  }
+  });
 
   // --- Mobile Menu (full-screen overlay) ---
   const hamburger = document.querySelector(".hamburger");
