@@ -49,6 +49,20 @@ img {
   display: block;
 }
 
+/* Available to screen readers, hidden visually. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1212,6 +1226,30 @@ a.carousel-card:hover .card-label::after {
 
 .footer-legal a:hover {
   color: rgba(255, 255, 255, 0.8);
+}
+
+/* Reopens the cookie banner so a choice can be changed. A button, not a
+   link, because it performs an action rather than navigating. */
+.footer-cookie-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: inherit;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.footer-cookie-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-cookie-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
 }
 
 /* ============================================
@@ -3052,11 +3090,19 @@ a.carousel-card:hover .card-label::after {
   flex-shrink: 0;
 }
 
-.cookie-btn-accept {
+.cookie-banner-status {
+  font-weight: 600;
+}
+
+/* Accept and Reject are styled identically, and share a min-width, so
+   neither choice is visually favoured over the other. Do not give one
+   of them more weight — equal prominence is a UK GDPR requirement. */
+.cookie-btn {
   background: var(--white);
   color: var(--ink-blue);
-  border: none;
+  border: 1px solid var(--white);
   padding: 10px 20px;
+  min-width: 104px;
   border-radius: var(--radius-btn);
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -3065,25 +3111,13 @@ a.carousel-card:hover .card-label::after {
   transition: opacity var(--transition);
 }
 
-.cookie-btn-accept:hover {
+.cookie-btn:hover {
   opacity: 0.85;
 }
 
-.cookie-btn-decline {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 10px 20px;
-  border-radius: var(--radius-btn);
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: border-color var(--transition);
-}
-
-.cookie-btn-decline:hover {
-  border-color: var(--white);
+.cookie-btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
 }
 
 /* ============================================
@@ -3123,8 +3157,7 @@ a.carousel-card:hover .card-label::after {
     width: 100%;
   }
 
-  .cookie-btn-accept,
-  .cookie-btn-decline {
+  .cookie-btn {
     flex: 1;
     text-align: center;
   }
