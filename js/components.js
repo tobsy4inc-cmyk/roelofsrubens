@@ -17,6 +17,29 @@
   }
   var p = depth > 0 ? "../" : "";
 
+  // --- Analytics bootstrap ---
+  // Injected from here rather than added to each of the 173 HTML
+  // files, because this script already runs synchronously in <head>
+  // on every page and already knows the correct path prefix.
+  // async = false preserves execution order: analytics-config.js
+  // (generated at build time, carries the Measurement ID) must run
+  // before analytics.js reads it.
+  (function injectAnalytics() {
+    var head = document.head || document.documentElement;
+    if (!head) return;
+    // terms.html loads components.js twice (head and body end). Without
+    // this guard that would load GA twice and double-count every event.
+    if (window.__RR_ANALYTICS_INJECTED__) return;
+    window.__RR_ANALYTICS_INJECTED__ = true;
+    var files = ["js/analytics-config.js", "js/analytics.js"];
+    for (var i = 0; i < files.length; i++) {
+      var s = document.createElement("script");
+      s.src = p + files[i];
+      s.async = false;
+      head.appendChild(s);
+    }
+  })();
+
   // --- Active page detection ---
   var segments = window.location.pathname.split("/").filter(Boolean);
   var filename = segments[segments.length - 1] || "index.html";
@@ -126,6 +149,9 @@
         '<p class="footer-tagline">Handmade ceramic decorations, designed in Berkshire.</p>' +
         '<div class="footer-bottom">' +
           '<p>&copy; 2026 Roelofs &amp; Rubens. All rights reserved.</p>' +
+          '<div class="footer-legal">' +
+            '<button type="button" class="footer-cookie-btn" id="cookie-settings">Cookie settings</button>' +
+          '</div>' +
         '</div>' +
       '</div>' +
     '</footer>';
@@ -168,7 +194,7 @@
     var body = el.getAttribute("data-body") || "";
     var btnText = el.getAttribute("data-btn-text") || "Contact us";
     var mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79468.27246417992!2d-1.4!3d51.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876a5649c5b5281%3A0x48a3b1c82b912e15!2sNewbury%2C%20UK!5e0!3m2!1sen!2suk!4v1";
-    var mapContent = getCookieConsent() === "accepted"
+    var mapContent = getConsent() === GRANTED
       ? '<iframe src="' + mapSrc + '" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Roelofs &amp; Rubens location"></iframe>'
       : '<div class="map-consent-gate" data-map-src="' + mapSrc + '"><div class="map-consent-inner"><p>Accept cookies to view the interactive map.</p></div></div>';
     return (
@@ -228,15 +254,42 @@
     );
   }
 
-  // --- Cookie consent ---
-  var COOKIE_KEY = "rr_cookies";
+  // --- Cookie consent (UK GDPR / PECR) ---
+  // The key is versioned. The previous banner ("rr_cookies") relied on
+  // implied consent and never mentioned analytics, so an old "accepted"
+  // cannot be carried over to GA4 — every visitor is asked once more
+  // against the explicit wording below.
+  var CONSENT_KEY = "rr_consent_v1";
+  var GRANTED = "granted";
+  var DENIED = "denied";
 
-  function getCookieConsent() {
-    try { return localStorage.getItem(COOKIE_KEY); } catch (e) { return null; }
+  // Element that opened the banner, so focus can be returned to it.
+  var consentTrigger = null;
+
+  function getConsent() {
+    try {
+      var val = localStorage.getItem(CONSENT_KEY);
+      return val === GRANTED || val === DENIED ? val : null;
+    } catch (e) {
+      return null;
+    }
   }
 
-  function setCookieConsent(val) {
-    try { localStorage.setItem(COOKIE_KEY, val); } catch (e) {}
+  function storeConsent(val) {
+    try { localStorage.setItem(CONSENT_KEY, val); } catch (e) {}
+  }
+
+  // Records the choice and applies it immediately — no reload needed.
+  function applyConsent(val) {
+    storeConsent(val);
+    try {
+      if (window.RRAnalytics && window.RRAnalytics.setConsent) {
+        window.RRAnalytics.setConsent(val === GRANTED);
+      }
+    } catch (e) {}
+    if (val === GRANTED) {
+      activateMaps();
+    }
   }
 
   function activateMaps() {
@@ -259,40 +312,80 @@
   }
 
   function buildCookieBanner() {
+    var current = getConsent();
+    var status = "";
+    if (current === GRANTED) {
+      status = '<span class="cookie-banner-status">You currently accept analytics cookies.</span> ';
+    } else if (current === DENIED) {
+      status = '<span class="cookie-banner-status">You currently reject analytics cookies.</span> ';
+    }
     return (
-      '<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice">' +
-        '<p>We use cookies to improve your experience on our site. By continuing to browse, you agree to our use of cookies. <a href="' + p + 'terms.html">Terms &amp; Conditions</a></p>' +
+      '<div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-text">' +
+        '<h2 class="visually-hidden" id="cookie-banner-title">Cookie choices</h2>' +
+        '<p id="cookie-banner-text">' + status +
+          'We\'d like to set Google Analytics cookies to measure how the site is used, ' +
+          'and to load the Google map on our contact page. Nothing is set unless you accept. ' +
+          '<a href="' + p + 'terms.html">Terms &amp; Conditions</a></p>' +
         '<div class="cookie-banner-actions">' +
-          '<button class="cookie-btn-accept" id="cookie-accept">Accept</button>' +
-          '<button class="cookie-btn-decline" id="cookie-decline">Decline</button>' +
+          '<button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>' +
+          '<button type="button" class="cookie-btn cookie-btn-reject" id="cookie-reject">Reject</button>' +
         '</div>' +
       '</div>'
     );
   }
 
-  function initCookieBanner() {
-    var consent = getCookieConsent();
-    if (consent === "accepted") {
-      return;
+  function closeCookieBanner() {
+    var banner = document.getElementById("cookie-banner");
+    if (banner && banner.parentNode) {
+      banner.parentNode.removeChild(banner);
     }
-    if (consent === "declined") {
-      return;
+    if (consentTrigger) {
+      try { consentTrigger.focus(); } catch (e) {}
+      consentTrigger = null;
     }
-    // Show banner
-    var div = document.createElement("div");
-    div.innerHTML = buildCookieBanner();
-    document.body.appendChild(div.firstChild);
+  }
+
+  // trigger: the element that opened the banner (the footer button),
+  // or undefined on the first-visit automatic prompt.
+  function showCookieBanner(trigger) {
+    if (document.getElementById("cookie-banner")) return;
+    consentTrigger = trigger || null;
+
+    var wrap = document.createElement("div");
+    wrap.innerHTML = buildCookieBanner();
+    document.body.appendChild(wrap.firstChild);
 
     document.getElementById("cookie-accept").addEventListener("click", function () {
-      setCookieConsent("accepted");
-      document.getElementById("cookie-banner").remove();
-      activateMaps();
+      applyConsent(GRANTED);
+      closeCookieBanner();
     });
 
-    document.getElementById("cookie-decline").addEventListener("click", function () {
-      setCookieConsent("declined");
-      document.getElementById("cookie-banner").remove();
+    document.getElementById("cookie-reject").addEventListener("click", function () {
+      applyConsent(DENIED);
+      closeCookieBanner();
     });
+
+    // Only pull focus when the visitor asked for the banner. On first
+    // visit, stealing focus would hijack the page. There is deliberately
+    // no focus trap and no Escape-to-close: dismissing the banner must
+    // never be read as a choice either way.
+    if (trigger) {
+      try { document.getElementById("cookie-accept").focus(); } catch (e) {}
+    }
+  }
+
+  function initCookieBanner() {
+    // Only prompt when no choice has been recorded yet.
+    if (getConsent() === null) {
+      showCookieBanner();
+    }
+
+    var settingsBtn = document.getElementById("cookie-settings");
+    if (settingsBtn) {
+      settingsBtn.addEventListener("click", function () {
+        showCookieBanner(settingsBtn);
+      });
+    }
   }
 
   // --- Inject once DOM is ready ---

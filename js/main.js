@@ -177,6 +177,28 @@
     });
   }
 
+  // --- Analytics helpers ---
+  // Thin wrappers so a missing/blocked js/analytics.js can never
+  // break page behaviour. All tracking goes through window.RRAnalytics.
+  function analytics() {
+    return window.RRAnalytics || null;
+  }
+
+  // ".venue-address" holds a full address, e.g.
+  // "The Shop at St Laurence, College Street, Ludlow SY8 1AW".
+  // The venue name is the part before the first comma.
+  function venueName() {
+    const el = document.querySelector(".venue-address");
+    if (!el || !el.textContent) return undefined;
+    const name = el.textContent.trim().split(",")[0].trim();
+    return name || undefined;
+  }
+
+  function currentProductName() {
+    const el = document.querySelector(".product-info h1");
+    return el && el.textContent ? el.textContent.trim() : undefined;
+  }
+
   // --- Product Venue Map (Leaflet) ---
   const venueMapEl = document.getElementById("product-map");
   if (venueMapEl && typeof L !== "undefined") {
@@ -217,8 +239,44 @@
         venueMap.touchZoom.enable();
         venueMap.doubleClickZoom.enable();
         overlay.remove();
+
+        const a = analytics();
+        if (a) {
+          a.trackStockistMapInteraction({
+            interaction_type: "map_unlock",
+            stockist_name: venueName(),
+            product_name: currentProductName(),
+          });
+        }
       });
     }
+  }
+
+  // --- Stockist outbound links on product pages ---
+  // 160 of 162 product pages end .product-description with a link to
+  // the retailer that stocks the piece ("buy these directly from their
+  // website here"). Delegated, so it survives any markup change.
+  const productDesc = document.querySelector(".product-description");
+  if (productDesc) {
+    productDesc.addEventListener("click", function (ev) {
+      const link = ev.target && ev.target.closest
+        ? ev.target.closest("a[href^='http']")
+        : null;
+      if (!link) return;
+
+      // Etsy links are already covered by etsy_click in analytics.js.
+      const host = (link.hostname || "").toLowerCase();
+      if (host === "etsy.com" || /\.etsy\.com$/.test(host)) return;
+
+      const a = analytics();
+      if (a) {
+        a.trackStockistClick({
+          stockist_name: venueName() || link.hostname,
+          link_url: link.href,
+          product_name: currentProductName(),
+        });
+      }
+    });
   }
 
   // --- Stockists Map (Leaflet) ---
@@ -396,12 +454,28 @@
         "<br>" +
         s.postcode +
         "</span>";
-      L.marker([s.lat, s.lng], { icon: pinIcon }).addTo(map).bindPopup(popup);
+      var marker = L.marker([s.lat, s.lng], { icon: pinIcon })
+        .addTo(map)
+        .bindPopup(popup);
+
+      // This closure is the only place the stockist name is in scope,
+      // so the click handler is bound here.
+      marker.on("click", function () {
+        const a = analytics();
+        if (a) {
+          a.trackStockistMapInteraction({
+            interaction_type: "marker_click",
+            stockist_name: s.name,
+          });
+        }
+      });
     });
 
     // Search/filter stockists
     var searchInput = document.getElementById("stockist-search");
     if (searchInput) {
+      var searchTimer = null;
+
       searchInput.addEventListener("input", function () {
         var query = this.value.toLowerCase().trim();
         var listEl = document.getElementById("stockist-list");
@@ -412,6 +486,44 @@
           card.style.display =
             !query || text.indexOf(query) !== -1 ? "" : "none";
         });
+
+        // Debounced, so a typed phrase is one event rather than one
+        // per keystroke.
+        if (searchTimer) clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () {
+          if (!query) return;
+          const a = analytics();
+          if (a) {
+            a.trackStockistMapInteraction({
+              interaction_type: "search",
+              search_term: query,
+            });
+          }
+        }, 700);
+      });
+    }
+
+    // Stockist cards carry no links today, but will if that section is
+    // restored with them — delegated so it starts working on its own.
+    var stockistList = document.getElementById("stockist-list");
+    if (stockistList) {
+      stockistList.addEventListener("click", function (ev) {
+        var link = ev.target && ev.target.closest
+          ? ev.target.closest(".stockist-card a[href]")
+          : null;
+        if (!link) return;
+        var card = link.closest(".stockist-card");
+        var heading = card ? card.querySelector("h3") : null;
+        const a = analytics();
+        if (a) {
+          a.trackStockistClick({
+            stockist_name:
+              heading && heading.textContent
+                ? heading.textContent.trim()
+                : link.hostname,
+            link_url: link.href,
+          });
+        }
       });
     }
   }
