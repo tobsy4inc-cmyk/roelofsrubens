@@ -34,6 +34,13 @@
   var cfg = window.__RR_ANALYTICS__ || {};
   var gaId = cfg.gaId || null;
 
+  // ?ga_debug=1 on a live URL surfaces the session in GA4 DebugView.
+  // Verified against the live property: passing debug_mode through
+  // gtag("config", ...) is NOT honoured — events still arrive without the
+  // debug flag and DebugView stays empty. It only works when set on each
+  // individual event, so track() adds it to every event's params below.
+  var debugMode = /[?&]ga_debug=1(&|$)/.test(window.location.search);
+
   // --- Helpers ---------------------------------------------------------
 
   function readConsent() {
@@ -113,8 +120,9 @@
       // GA4 anonymises IPs by default and ignores anonymize_ip; it is kept
       // as an explicit statement of intent, not because it changes behaviour.
       var configParams = { anonymize_ip: true };
-      // ?ga_debug=1 on a live URL surfaces the session in GA4 DebugView.
-      if (/[?&]ga_debug=1(&|$)/.test(window.location.search)) {
+      // Kept so the page_view that config emits is also flagged, even though
+      // on its own this is not enough — see the debugMode note above.
+      if (debugMode) {
         configParams.debug_mode = true;
       }
       window.gtag("config", gaId, configParams);
@@ -140,7 +148,12 @@
   function track(name, params) {
     if (!active || !name) return;
     try {
-      window.gtag("event", name, clean(params));
+      var payload = clean(params);
+      // Per-event, because config-level debug_mode does not reach the wire.
+      if (debugMode) {
+        payload.debug_mode = true;
+      }
+      window.gtag("event", name, payload);
     } catch (e) {
       /* analytics must never break the page */
     }
